@@ -40,6 +40,8 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
+$route['wechat'] = 'welcome/wechat_index';
+$route['weibo'] = 'welcome/weibo_index';
 
 
 /* End of file routes.php */
