@@ -21,6 +21,7 @@ class Welcome extends CI_Controller {
     //weibo index
     public function weibo_index(){
         echo 'weibo_index';
+        dump($_POST);
     }
 }
 
