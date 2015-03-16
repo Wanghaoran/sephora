@@ -15,12 +15,17 @@ class Welcome extends CI_Controller {
 
     //wechat index
     public function wechat_index(){
-        echo 'wechat_index';
+        $this->load->helper('url');
+        if(empty($_GET['code'])){
+            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5a2dbcd561853a2f&redirect_uri=' . urlencode('http://sephora.cnhtk.cn/') . '&response_type=code&scope=snsapi_userinfo&state=index#wechat_redirect';
+            redirect($token_url);
+        }else{
+            var_dump($_GET);
+        }
     }
 
     //weibo index
     public function weibo_index(){
-        echo 'weibo_index';
         var_dump($_POST);
     }
 }
