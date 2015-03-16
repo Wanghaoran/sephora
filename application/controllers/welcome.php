@@ -2,26 +2,26 @@
 
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
-        echo $_SERVER['HTTP_USER_AGENT'];
-//		$this->load->view('welcome_message');
+        //route
+        $this->load->helper('url');
+        if(strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false){
+            redirect('welcome/wechat_index');
+        }else{
+            redirect('welcome/weibo_index');
+        }
 	}
+
+    //wechat index
+    public function wechat_index(){
+        echo 'wechat_index';
+    }
+
+    //weibo index
+    public function weibo_index(){
+        echo 'weibo_index';
+    }
 }
 
 /* End of file welcome.php */
