@@ -34,16 +34,18 @@ class Welcome extends CI_Controller {
     */
     //csv reder
     public function csvreder(){
+        set_time_limit(0);
         $this->load->library('csvreader');
 
         $filePath = './data/BestiesMar10.csv';
 
-        $data = array();
         $data = $this->csvreader->parse_file($filePath);
 
-        echo '<pre>';
-        var_dump($data);
-        echo '</pre>';
+        $this -> load -> model('code10_model');
+
+        foreach($data as $value){
+            $this -> code10_model -> insertcode($value['code']);
+        }
     }
 
 
