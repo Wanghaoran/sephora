@@ -51,7 +51,7 @@ class Welcome extends CI_Controller {
         */
 
         $this -> load -> model('code10_model');
-        $file = fopen("./data/BestiesMar10.csv","r");
+        $file = fopen("./data/BestiesMar30.csv","r");
         while(!feof($file))
         {
             $data = fgetcsv($file);

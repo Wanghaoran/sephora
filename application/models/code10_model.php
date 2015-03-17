@@ -12,7 +12,7 @@ class Code10_model extends CI_Model {
         $data = array(
             'code' => $code,
         );
-        $this -> db -> insert('code10', $data);
+        $this -> db -> insert('code30', $data);
         return $this->db->insert_id();
     }
 
