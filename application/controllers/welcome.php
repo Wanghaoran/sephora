@@ -31,11 +31,12 @@ class Welcome extends CI_Controller {
         var_dump($_POST);
     }
 
+    */
     //csv reder
     public function csvreder(){
         $this->load->library('csvreader');
 
-        $filePath = './data/BestiesMar50.csv';
+        $filePath = './data/BestiesMar10.csv';
 
         $data = array();
         $data = $this->csvreader->parse_file($filePath);
@@ -44,7 +45,7 @@ class Welcome extends CI_Controller {
         var_dump($data);
         echo '</pre>';
     }
-    */
+
 
     public function sendcode(){
         $arr = array();
