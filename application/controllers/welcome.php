@@ -44,7 +44,8 @@ class Welcome extends CI_Controller {
         $this -> load -> model('code10_model');
 
         foreach($data as $value){
-            $this -> code10_model -> insertcode($value['code']);
+            var_dump($value);
+//            $this -> code10_model -> insertcode($value['code']);
         }
     }
 
