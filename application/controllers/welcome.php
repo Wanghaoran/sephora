@@ -2,6 +2,8 @@
 
 class Welcome extends CI_Controller {
 
+
+    /*
 	public function index()
 	{
         //route
@@ -27,6 +29,29 @@ class Welcome extends CI_Controller {
     //weibo index
     public function weibo_index(){
         var_dump($_POST);
+    }
+
+    //csv reder
+    public function csvreder(){
+        $this->load->library('csvreader');
+
+        $filePath = './data/BestiesMar50.csv';
+
+        $data = array();
+        $data = $this->csvreader->parse_file($filePath);
+
+        echo '<pre>';
+        var_dump($data);
+        echo '</pre>';
+    }
+    */
+
+    public function sendcode(){
+        $arr = array();
+        $arr['msg'] = '200';
+        $arr['num'] = 'testcode';
+        $arr['cost'] = '20';
+        echo json_encode($arr);
     }
 }
 
