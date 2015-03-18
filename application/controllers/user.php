@@ -92,10 +92,21 @@ class User extends CI_Controller {
             die('<h1>Get Ticket Fail!</h1>');
         }
 
-        var_dump($ticket);
+        //signature
+        $timestamp = time();
+        $wxnonceStr = "sephora";
+        $wxticket = $ticket;
+        $wxOri = sprintf("jsapi_ticket=%s&noncestr=%s&timestamp=%s&url=%s",$wxticket, $wxnonceStr, $timestamp,'http://www.baidu.com');
+        $wxSha1 = sha1($wxOri);
+
+        $data = array(
+            'timestamp' => $timestamp,
+            'nonceStr' => $wxnonceStr,
+            'signature' => $wxSha1,
+        );
 
 
-        $this->load->view('creatquestion');
+        $this->load->view('creatquestion', $data);
 
 
     }

@@ -63,9 +63,9 @@
         wx.config({
             debug: true,
             appId: "wx949efd128cd9bf73",
-            timestamp: '上一步生成的时间戳',
-            nonceStr: '上一步中的字符串',
-            signature: '上一步生成的签名',
+            timestamp: '<?php echo $timestamp;?>',
+            nonceStr: '<?php echo $nonceStr;?>',
+            signature: '<?php echo $signature;?>',
             jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 功能列表，我们要使用JS-SDK的什么功能
         });
 
@@ -73,8 +73,8 @@
         wx.ready(function() {
             // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
             wx.onMenuShareTimeline({
-                title: '', // 分享标题
-                link: '', // 分享链接
+                title: '测试啊啊', // 分享标题
+                link: 'http://www.baidu.com', // 分享链接
                 imgUrl: '', // 分享图标
                 success: function () {
                     // 用户确认分享后执行的回调函数
@@ -86,11 +86,11 @@
             });
             // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
             wx.onMenuShareAppMessage({
-                title: '', // 分享标题
-                desc: '', // 分享描述
-                link: '', // 分享链接
+                title: '测试啊啊', // 分享标题
+                desc: '测试啊啊测试啊啊', // 分享描述
+                link: 'http://www.baidu.com', // 分享链接
                 imgUrl: '', // 分享图标
-                type: '', // 分享类型,music、video或link，不填默认为link
+                type: 'link', // 分享类型,music、video或link，不填默认为link
                 dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                 success: function () {
                     // 用户确认分享后执行的回调函数
