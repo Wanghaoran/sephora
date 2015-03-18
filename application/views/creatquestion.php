@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?=$this->config->base_url()?>public/css/reset.css">
     <link rel="stylesheet" href="<?=$this->config->base_url()?>public/css/common.css">
     <link rel="stylesheet" type="text/css" href="<?=$this->config->base_url()?>public/css/main.css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
 
 
@@ -60,8 +61,8 @@
         Sephora.init();
         // 微信配置
         wx.config({
-            debug: false,
-            appId: "你的AppID",
+            debug: true,
+            appId: "wx949efd128cd9bf73",
             timestamp: '上一步生成的时间戳',
             nonceStr: '上一步中的字符串',
             signature: '上一步生成的签名',
