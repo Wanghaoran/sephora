@@ -93,9 +93,12 @@ class User extends CI_Controller {
         }
 
         //signature
-        $this->load->helper('url');
+
+
+
         $timestamp = time();
-        $url = current_url() . '?' . $_SERVER["QUERY_STRING"];
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $url = "$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         $wxnonceStr = "sephora";
         $wxticket = $ticket;
         $wx_str = 'jsapi_ticket=' . $wxticket . '&noncestr=' . $wxnonceStr . '&timestamp=' . $timestamp . '&url=' . $url;
