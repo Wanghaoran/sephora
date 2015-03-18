@@ -67,6 +67,10 @@ class Welcome extends CI_Controller {
         redirect('user/' . $_GET['state']);
 
     }
+
+    public function question($q){
+        var_dump($q);
+    }
 }
 
 /* End of file welcome.php */

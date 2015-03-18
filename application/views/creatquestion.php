@@ -73,9 +73,9 @@
         wx.ready(function() {
             // 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口
             wx.onMenuShareTimeline({
-                title: '测试啊啊', // 分享标题
-                link: 'http://www.baidu.com', // 分享链接
-                imgUrl: '', // 分享图标
+                title: '速速来答题，赢走我的真金犒赏。', // 分享标题
+                link: '<?=$this->config->base_url()?>q/<?=$qid;?>', // 分享链接
+                imgUrl: '<?=$this->config->base_url()?>public/images/icon.jpg', // 分享图标
                 success: function () {
                     // 用户确认分享后执行的回调函数
                 },
@@ -86,10 +86,10 @@
             });
             // 获取“分享给朋友”按钮点击状态及自定义分享内容接口
             wx.onMenuShareAppMessage({
-                title: '测试啊啊', // 分享标题
-                desc: '测试啊啊测试啊啊', // 分享描述
-                link: 'http://www.baidu.com', // 分享链接
-                imgUrl: '', // 分享图标
+                title: '速速来答题，赢走我的真金犒赏。', // 分享标题
+                desc: '姐最满意自己哪一部分？速速来答题，赢走我的真金犒赏。', // 分享描述
+                link: '<?=$this->config->base_url()?>q/<?=$qid;?>', // 分享链接
+                imgUrl: '<?=$this->config->base_url()?>public/images/icon.jpg', // 分享图标
                 type: 'link', // 分享类型,music、video或link，不填默认为link
                 dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                 success: function () {
