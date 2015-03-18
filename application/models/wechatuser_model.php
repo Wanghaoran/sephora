@@ -9,7 +9,7 @@ class wechatuser_model extends CI_Model {
     }
 
     public function queryhave($openID){
-        $query = $this -> db -> get_where('user', array('openid' => $openID), 1);
+        $query = $this -> db -> get_where('wechatuser', array('openid' => $openID), 1);
         return $query -> result_array();
     }
 
@@ -34,7 +34,7 @@ class wechatuser_model extends CI_Model {
             'addtime' => date('Y-m-d H:i:s'),
         );
 
-        $this -> db -> insert('user', $data);
+        $this -> db -> insert('wechatuser', $data);
 
         return $this->db->insert_id();
     }
