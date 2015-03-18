@@ -96,7 +96,7 @@ class User extends CI_Controller {
         $timestamp = time();
         $wxnonceStr = "sephora";
         $wxticket = $ticket;
-        $wxOri = sprintf("jsapi_ticket=%s&noncestr=%s&timestamp=%s&url=%s",$wxticket, $wxnonceStr, $timestamp,'http://www.baidu.com');
+        $wxOri = sprintf("jsapi_ticket=%s&noncestr=%s&timestamp=%s&url=%s",$wxticket, $wxnonceStr, $timestamp, current_url());
         $wxSha1 = sha1($wxOri);
 
         $data = array(
@@ -106,6 +106,7 @@ class User extends CI_Controller {
         );
 
         var_dump($data);
+        var_dump(current_url());
 
 
         $this->load->view('creatquestion', $data);
