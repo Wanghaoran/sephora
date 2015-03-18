@@ -106,11 +106,11 @@ class User extends CI_Controller {
             'signature' => $wxSha1,
             'qid' => $qid,
         );
-
-
         $this->load->view('creatquestion', $data);
+    }
 
-
+    public function endquestion($qid){
+        var_dump($qid);
     }
 
 }
