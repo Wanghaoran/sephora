@@ -27,7 +27,7 @@
             <div class="s3_question" id="question">
                 <h3>Step2</h3>
                 <h4>选出你的答案</h4>
-                <h5 id="s3_ques_title">姐最满意自己哪一部分？</h5>
+                <h5 id="s3_ques_title"><?php echo$question;?></h5>
                 <ul class="s3_q_list">
                     <?php foreach($answer_arr as $key => $value): ?>
                         <li data-list="<?php echo$key;?>"><span></span><?php echo$key;?>：<?php echo$value;?></li>

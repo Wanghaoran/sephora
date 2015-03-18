@@ -32,6 +32,7 @@ class User extends CI_Controller {
 
         $data = array(
             'answer_arr' => $this -> config -> item('questions')[$q]['answer'],
+            'question' => $this -> config -> item('questions')[$q]['question'],
             'q' => $q,
         );
         $this->load->view('answer',$data);
