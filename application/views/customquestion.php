@@ -22,23 +22,30 @@
 </div>
 <div class="main">
     <div class="content" id="content" data-q="n" data-style="questioner" data-a="n" data-share="n">
-        <!-- step1 选出想要问闺蜜的问题 -->
-        <section class="screen" id="screen_2">
-            <div class="s2_slogan">茫茫朋友圈<br>谁是最懂你的真命闺蜜？<br>找到她，一起赢取甜蜜好礼</div>
-            <div class="s2_question" id="question">
-                <h3>Step1</h3>
-                <h4>选出你的问题</h4>
-                <ul class="s2_q_list">
-                    <li data-list="1"><span></span>问题1：姐最满意自己哪一部分？</li>
-                    <li data-list="2"><span></span>问题2：哪种男生是姐的菜？</li>
-                    <li data-list="3"><span></span>问题3：姐是什么Cup？</li>
-                    <li data-list="4"><span></span>问题4：我在朋友圈是什么卦？</li>
-                    <li data-list="5"><span></span>问题5：该不该看男人手机？</li>
-                    <li class="custom"><a href="<?=$this->config->base_url()?>customquestion">姐要自己出题！</a></li>
-                </ul>
-                <div class="s2_sure" id="s2_sure">
+        <!-- 中大奖的情况 显示结果 -->
+        <section class="screen" id="screen_3">
+            <div class="s3_question" id="question">
+                <h3>Step2</h3>
+                <h4>姐要自己出题</h4>
+                <div class="s32_form">
+                    <form action="#" method="#" id="form" name="form">
+                        <input type="text" value="" name="ques" class="s32_ques c_input" placeholder="问题"/>
+                        <ul class="s32_q_list clearFix">
+                            <li data-list="a1"><span></span><input type="text" value="" name="ans1" class="c_input" placeholder="答案一"/></li>
+                            <li data-list="a2"><span></span><input type="text" value="" name="ans2" class="c_input"  placeholder="答案二"/></li>
+                            <li data-list="a3"><span></span><input type="text" value="" name="ans3" class="c_input"  placeholder="答案三"/></li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="s3_sure" id="s3_sure">
                     <img src="<?=$this->config->base_url()?>public/images/btn_sure.jpg">
                 </div>
+                <div class="s3_back" id="s3_back">
+                    <img src="<?=$this->config->base_url()?>public/images/btn_back.jpg">
+                </div>
+            </div>
+            <div class="libao s3_libao">
+                <img src="<?=$this->config->base_url()?>public/images/gift.png">
             </div>
         </section>
     </div>
@@ -54,18 +61,9 @@
 <script type="text/javascript">
     $(function(){
         Sephora.init();
-        $("#s2_sure").click(function() {
-            var active_val = $(".s2_q_list>li.active");
-            var ques = active_val.data("list");
-            console.log(ques)
-            if (active_val.length > 0) { //成功选择后
-                location.href='<?=$this->config->base_url()?>answer?q=' + ques;
-            } else {
-                alert("请选择一个问题。");  //当玩家没有做任何选择，就点击确定的情况
-            }
+        $(".s32_q_list>li").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
         })
-        //var aaa = window.location.hash;
-        //alert(aaa)
     })
 </script>
 </body>

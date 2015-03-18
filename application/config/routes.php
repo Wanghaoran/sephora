@@ -42,9 +42,10 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['wechat'] = 'welcome/wechat_index';
 $route['terms'] = 'welcome/terms';
-$route['question'] = 'welcome/question';
-$route['answer'] = 'welcome/answer';
-$route['creatquestion'] = 'welcome/creatquestion';
+$route['question'] = 'user/question';
+$route['answer'] = 'user/answer';
+$route['creatquestion'] = 'user/creatquestion';
+$route['customquestion'] = 'user/customquestion';
 
 
 /* End of file routes.php */
