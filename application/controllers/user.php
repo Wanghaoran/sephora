@@ -19,7 +19,11 @@ class User extends CI_Controller {
 
     public function question(){
 
-        $this->load->view('question');
+        $data = array(
+            'q' => $this -> CI -> config -> item('questions')
+        );
+
+        $this->load->view('question', $data);
     }
 
     public function answer(){

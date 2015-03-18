@@ -29,11 +29,9 @@
                 <h3>Step1</h3>
                 <h4>选出你的问题</h4>
                 <ul class="s2_q_list">
-                    <li data-list="1"><span></span>问题1：姐最满意自己哪一部分？</li>
-                    <li data-list="2"><span></span>问题2：哪种男生是姐的菜？</li>
-                    <li data-list="3"><span></span>问题3：姐是什么Cup？</li>
-                    <li data-list="4"><span></span>问题4：我在朋友圈是什么卦？</li>
-                    <li data-list="5"><span></span>问题5：该不该看男人手机？</li>
+                    <?php foreach($q as $key => $value): ?>
+                        <li data-list="<?php echo$key;?>"><span></span>问题<?php echo$key;?>：<?php echo$value['question'];?></li>
+                    <?php endforeach; ?>
                     <li class="custom"><a href="<?=$this->config->base_url()?>customquestion">姐要自己出题！</a></li>
                 </ul>
                 <div class="s2_sure" id="s2_sure">

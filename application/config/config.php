@@ -358,5 +358,48 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 
+$config['questions'] = array(
+    1 => array(
+        'question' => '姐最满意自己哪一部分1？',
+        'answer' => array(
+            1 => '答案1-1',
+            2 => '答案1-2',
+            3 => '答案1-3',
+        ),
+    ),
+    2 => array(
+        'question' => '哪种男生是姐的菜？',
+        'answer' => array(
+            1 => '答案2-1',
+            2 => '答案2-2',
+            3 => '答案2-3',
+        ),
+    ),
+    3 => array(
+        'question' => '姐是什么Cup？',
+        'answer' => array(
+            1 => '答案3-1',
+            2 => '答案3-2',
+            3 => '答案3-3',
+        ),
+    ),
+    4 => array(
+        'question' => '我在朋友圈是什么卦？',
+        'answer' => array(
+            1 => '答案4-1',
+            2 => '答案4-2',
+            3 => '答案4-3',
+        ),
+    ),
+    5 => array(
+        'question' => '该不该看男人手机？',
+        'answer' => array(
+            1 => '答案5-1',
+            2 => '答案5-2',
+            3 => '答案5-3',
+        ),
+    ),
+);
+
 /* End of file config.php */
 /* Location: ./application/config/config.php */
