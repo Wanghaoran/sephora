@@ -18,7 +18,7 @@ class wechattoken_model extends CI_Model {
 
     public function querytoken(){
 
-        $res = file_get_contents('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET');
+        $res = file_get_contents('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx949efd128cd9bf73&secret=f5b75c8db05e107944f144b6eff2b304');
         $res = json_decode($res, true);
 
         $token = $res['access_token'];
