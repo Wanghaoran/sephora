@@ -125,7 +125,14 @@ class User extends CI_Controller {
         $ip = $this->input->ip_address();
         $code = $this -> code_model -> getcode(30, 2, $uid, $ip);
 
-        var_dump($code);
+        if(!$code){
+            //again
+            $code = $this -> code_model -> getcode(30, 2, $uid, $ip);
+        }
+
+        if(!$code){
+            redirect('user/usercenter');
+        }
 
 
     }
