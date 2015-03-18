@@ -61,7 +61,7 @@
         Sephora.init();
         // 微信配置
         wx.config({
-            debug: true,
+            debug: false,
             appId: "wx949efd128cd9bf73",
             timestamp: '<?php echo $timestamp;?>',
             nonceStr: '<?php echo $nonceStr;?>',
