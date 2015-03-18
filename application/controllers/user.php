@@ -42,8 +42,30 @@ class User extends CI_Controller {
     }
 
     public function creatquestion(){
-        var_dump($_GET);
-        var_dump($_POST);
+        $this -> load -> model('question_model');
+        if(!empty($_POST)){
+            //customquestion
+            $uid = $this->session->userdata('sephora_wechat_id');
+            $q = $this->input->post('ques');
+            $a1 = $this->input->post('ans1');
+            $a2 = $this->input->post('ans2');
+            $a3 = $this->input->post('ans3');
+            $true = $this->input->post('trueanswer');
+        }else{
+            $uid = $this->session->userdata('sephora_wechat_id');
+            $q = $this -> config -> item('questions')[$this->input->get('q')]['question'];
+            $a1 = $this -> config -> item('questions')[$this->input->get('q')]['answer'][1];
+            $a2 = $this -> config -> item('questions')[$this->input->get('q')]['answer'][2];
+            $a3 = $this -> config -> item('questions')[$this->input->get('q')]['answer'][3];
+            $true = $this->input->get('a');
+
+        }
+        $qid = $this -> question_model -> insertquestion($uid, $q, $a1, $a2, $a3, $true);
+        if(!$qid){
+            die('<h1>Creat Question Fail!</h1>');
+        }
+        var_dump($qid);
+
     }
 
 }

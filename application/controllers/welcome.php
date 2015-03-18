@@ -26,8 +26,6 @@ class Welcome extends CI_Controller {
         $this->load->view('terms');
     }
 
-
-
     public function oauth2_authorize(){
         $this->load->helper('url');
         if(empty($_GET['code'])){
@@ -67,7 +65,6 @@ class Welcome extends CI_Controller {
         }
 
         redirect('user/' . $_GET['state']);
-
 
     }
 }
