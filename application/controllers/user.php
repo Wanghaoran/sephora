@@ -105,6 +105,8 @@ class User extends CI_Controller {
             'signature' => $wxSha1,
         );
 
+        var_dump($data);
+
 
         $this->load->view('creatquestion', $data);
 
