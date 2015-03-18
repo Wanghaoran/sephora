@@ -32,43 +32,35 @@ class Welcome extends CI_Controller {
     }
 
     */
-    //csv reder
-    public function csvreder(){
-        set_time_limit(0);
-
-        /*
-        $this->load->library('csvreader');
-
-        $filePath = './data/BestiesMar10.csv';
-
-        $data = $this->csvreader->parse_file($filePath);
 
 
-        foreach($data as $value){
-            var_dump($value);
-//            $this -> code10_model -> insertcode($value['code ']);
-        }
-        */
-
-        $this -> load -> model('code10_model');
-        $file = fopen("./data/BestiesMar50.csv","r");
-        while(!feof($file))
-        {
-            $data = fgetcsv($file);
-            $this -> code10_model -> insertcode($data[0]);
-
-        }
-
-        fclose($file);
+    public function wechat_index(){
+        $this->load->view('wechat_index');
     }
 
+    public function terms(){
+        $this->load->view('terms');
+    }
 
-    public function sendcode(){
-        $arr = array();
-        $arr['msg'] = '200';
-        $arr['num'] = 'testcode';
-        $arr['cost'] = '20';
-        echo json_encode($arr);
+    public function question(){
+
+        //check authorization
+        if(!$this->session->userdata('sephora_wechat_id')){
+            $this->load->helper('url');
+            redirect('welcome/oauth2_authorize');
+        }
+
+        $this->load->view('question');
+    }
+
+    public function oauth2_authorize(){
+        $this->load->helper('url');
+        if(empty($_GET['code'])){
+            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx949efd128cd9bf73&redirect_uri=' . urlencode('http://sephora.cnhtk.cn/index.php/welcome/oauth2_authorize') . '&response_type=code&scope=snsapi_userinfo&state=question#wechat_redirect';
+            redirect($token_url);
+        }else{
+            var_dump($_GET);
+        }
     }
 }
 
