@@ -29,5 +29,14 @@ class question_model extends CI_Model {
         return $query -> result_array()[0]['type'];
     }
 
+    public function updatetype($qid){
+        $data = array(
+            'type' => 2,
+        );
+        $this -> db -> where('id', $qid);
+        $this -> db -> update('question', $data);
+        return $this -> db -> affected_rows();
+    }
+
 
 }

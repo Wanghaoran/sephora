@@ -134,6 +134,8 @@ class User extends CI_Controller {
             redirect('user/usercenter');
         }
 
+        //update question type
+        $this -> question_model -> updatetype($qid);
 
     }
 
