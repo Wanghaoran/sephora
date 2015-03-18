@@ -99,6 +99,7 @@ class User extends CI_Controller {
         $wxnonceStr = "sephora";
         $wxticket = $ticket;
         $wxOri = sprintf("jsapi_ticket=%s&noncestr=%s&timestamp=%s&url=%s",$wxticket, $wxnonceStr, $timestamp, $url);
+        var_dump($wxOri);
         $wxSha1 = sha1($wxOri);
 
         $data = array(
