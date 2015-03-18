@@ -24,5 +24,10 @@ class question_model extends CI_Model {
         return $this->db->insert_id();
     }
 
+    public function gettype($qid){
+        $query = $this -> db -> get_where('user', array('question' => $qid), 1);
+        return $query -> result_array()[0]['type'];
+    }
+
 
 }

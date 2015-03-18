@@ -110,6 +110,17 @@ class User extends CI_Controller {
     }
 
     public function endquestion($qid){
+
+        //check question type
+        $this -> load -> model('question_model');
+        $qtype = $this -> question_model -> gettype($qid);
+        if($qtype != 1){
+            die('Bad');
+        }
+
+        var_dump($qtype);
+
+
         var_dump($qid);
     }
 
