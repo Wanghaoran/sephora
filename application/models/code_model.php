@@ -10,6 +10,23 @@ class Code_model extends CI_Model {
 
     public function getcode($ctype, $ttype, $uid, $ip){
         $query = $this -> db -> get_where('code' . $ctype, array('type' => 1), 1);
-        return $query -> result_array();
+        $a = $query -> result_array();
+        if(!$a){
+            return false;
+        }
+        //update
+        $data = array(
+            'type' => $ttype,
+            'time' => time(),
+            'uid' => $uid,
+            'ip' => $ip,
+        );
+        $this -> db -> where('id', $a[0]['id']);
+        $this -> db -> update('code' . $ctype, $data);
+        $re = $this -> db -> affected_rows();
+        if(!$re){
+            return false;
+        }
+        return $a[0]['code'];
     }
 }
