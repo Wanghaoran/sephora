@@ -38,10 +38,10 @@
                     </form>
                 </div>
                 <div class="s3_sure" id="s3_sure">
-                    <img src="<?=$this->config->base_url()?>public/images/btn_sure.jpg">
+                    <a onclick="checkup();"><img src="<?=$this->config->base_url()?>public/images/btn_sure.jpg"></a>
                 </div>
                 <div class="s3_back" id="s3_back">
-                    <img src="<?=$this->config->base_url()?>public/images/btn_back.jpg">
+                    <a href="javascript:history.go(-1);"><img src="<?=$this->config->base_url()?>public/images/btn_back.jpg"></a>
                 </div>
             </div>
             <div class="libao s3_libao">
@@ -65,6 +65,11 @@
             $(this).addClass("active").siblings().removeClass("active");
         })
     })
+</script>
+<script>
+    var checkup = function(){
+        $('#form').submit();
+    }
 </script>
 </body>
 
