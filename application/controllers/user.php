@@ -20,7 +20,7 @@ class User extends CI_Controller {
     public function question(){
 
         $data = array(
-            'q' => $this -> CI -> config -> item('questions')
+            'q' => $this -> config -> item('questions'),
         );
 
         $this->load->view('question', $data);
