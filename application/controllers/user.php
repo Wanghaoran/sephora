@@ -64,7 +64,9 @@ class User extends CI_Controller {
         if(!$qid){
             die('<h1>Creat Question Fail!</h1>');
         }
-        var_dump($qid);
+
+        $this->load->view('answer');
+
 
     }
 
