@@ -43,6 +43,7 @@ class User extends CI_Controller {
 
     public function creatquestion(){
         var_dump($_GET);
+        var_dump($_POST);
     }
 
 }

@@ -28,7 +28,7 @@
                 <h3>Step2</h3>
                 <h4>姐要自己出题</h4>
                 <div class="s32_form">
-                    <form action="#" method="#" id="form" name="form">
+                    <form action="<?=$this->config->base_url()?>creatquestion" method="post" id="form" name="form">
                         <input type="text" value="" name="ques" class="s32_ques c_input" placeholder="问题"/>
                         <ul class="s32_q_list clearFix">
                             <li data-list="a1"><span></span><input type="text" value="" name="ans1" class="c_input" placeholder="答案一"/></li>
