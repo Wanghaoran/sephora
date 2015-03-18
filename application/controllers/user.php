@@ -65,7 +65,7 @@ class User extends CI_Controller {
             die('<h1>Creat Question Fail!</h1>');
         }
 
-        $this->load->view('answer');
+        $this->load->view('creatquestion');
 
 
     }
