@@ -31,10 +31,11 @@
                     <form action="<?=$this->config->base_url()?>creatquestion" method="post" id="form" name="form">
                         <input type="text" value="" name="ques" class="s32_ques c_input" placeholder="问题"/>
                         <ul class="s32_q_list clearFix">
-                            <li data-list="a1"><span></span><input type="text" value="" name="ans1" class="c_input" placeholder="答案一"/></li>
-                            <li data-list="a2"><span></span><input type="text" value="" name="ans2" class="c_input"  placeholder="答案二"/></li>
-                            <li data-list="a3"><span></span><input type="text" value="" name="ans3" class="c_input"  placeholder="答案三"/></li>
+                            <li data-list="1"><span></span><input type="text" value="" name="ans1" class="c_input" placeholder="答案一"/></li>
+                            <li data-list="2"><span></span><input type="text" value="" name="ans2" class="c_input"  placeholder="答案二"/></li>
+                            <li data-list="3"><span></span><input type="text" value="" name="ans3" class="c_input"  placeholder="答案三"/></li>
                         </ul>
+                        <input type="hidden" name="trueanswer" value="">
                     </form>
                 </div>
                 <div class="s3_sure" id="s3_sure">
@@ -84,6 +85,9 @@
             alert('答案三不能为空！');
             return;
         }
+        var active_val = $(".s32_q_list>li.active");
+        var ques = active_val.data("list");
+        alert(ques);
         $('#form').submit();
     }
 </script>
