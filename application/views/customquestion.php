@@ -87,7 +87,13 @@
         }
         var active_val = $(".s32_q_list>li.active");
         var ques = active_val.data("list");
-        $("input[name='trueanswer']").val(ques);
+
+        if (active_val.length > 0) { //成功选择后
+            $("input[name='trueanswer']").val(ques);
+        }else{
+            alert('请选择一个正确答案！');
+            return;
+        }
 
         $('#form').submit();
     }
