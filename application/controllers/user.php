@@ -95,7 +95,7 @@ class User extends CI_Controller {
         //signature
         $this->load->helper('url');
         $timestamp = time();
-        $url = current_url();
+        $url = current_url() . '?' . $_SERVER["QUERY_STRING"];
         $wxnonceStr = "sephora";
         $wxticket = $ticket;
         $wxOri = sprintf("jsapi_ticket=%s&noncestr=%s&timestamp=%s&url=%s",$wxticket, $wxnonceStr, $timestamp, $url);
