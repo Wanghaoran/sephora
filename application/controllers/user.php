@@ -66,6 +66,23 @@ class User extends CI_Controller {
             die('<h1>Creat Question Fail!</h1>');
         }
 
+
+        //get wechat access_token
+        $this -> load -> model('wechattoken_model');
+        $token_arr = $this -> wechattoken_model -> gettoken();
+        if(!$token_arr){
+            $token = $this -> wechattoken_model -> querytoken();
+        }else{
+            $token = $token_arr[0]['value'];
+        }
+
+        if(!$token){
+            die('<h1>Get Token Fail!</h1>');
+        }
+
+        var_dump($token);
+
+
         $this->load->view('creatquestion');
 
 
