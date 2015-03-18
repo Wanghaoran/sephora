@@ -25,7 +25,7 @@ class question_model extends CI_Model {
     }
 
     public function gettype($qid){
-        $query = $this -> db -> get_where('user', array('question' => $qid), 1);
+        $query = $this -> db -> get_where('question', array('id' => $qid), 1);
         return $query -> result_array()[0]['type'];
     }
 
