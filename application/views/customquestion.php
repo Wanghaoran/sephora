@@ -87,7 +87,7 @@
         }
         var active_val = $(".s32_q_list>li.active");
         var ques = active_val.data("list");
-        $("input[name='ans1']").val(ques);
+        $("input[name='trueanswer']").val(ques);
 
         $('#form').submit();
     }
