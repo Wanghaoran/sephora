@@ -110,18 +110,28 @@ class User extends CI_Controller {
     }
 
     public function endquestion($qid){
+        $this->load->helper('url');
 
         //check question type
         $this -> load -> model('question_model');
         $qtype = $this -> question_model -> gettype($qid);
         if($qtype != 1){
-            die('Bad');
+            redirect('user/usercenter');
         }
 
-        var_dump($qtype);
+        //get 30code
+        $this -> load -> model('code_model');
+        $uid = $this->session->userdata('sephora_wechat_id');
+        $ip = $this->input->ip_address();
+        $code = $this -> code_model -> getcode(30, 2, $uid, $ip);
+
+        var_dump($code);
 
 
-        var_dump($qid);
+    }
+
+    public function usercenter(){
+
     }
 
 }

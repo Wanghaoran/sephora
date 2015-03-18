@@ -9,7 +9,7 @@ class Code_model extends CI_Model {
     }
 
     public function getcode($ctype, $ttype, $uid, $ip){
-
-
+        $query = $this -> db -> get_where('code' . $ctype, array('type' => 1), 1);
+        return $query -> result_array();
     }
 }
