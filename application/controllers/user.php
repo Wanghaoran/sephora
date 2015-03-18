@@ -93,10 +93,12 @@ class User extends CI_Controller {
         }
 
         //signature
+        $this->load->helper('url');
         $timestamp = time();
+        $url = current_url();
         $wxnonceStr = "sephora";
         $wxticket = $ticket;
-        $wxOri = sprintf("jsapi_ticket=%s&noncestr=%s&timestamp=%s&url=%s",$wxticket, $wxnonceStr, $timestamp, current_url());
+        $wxOri = sprintf("jsapi_ticket=%s&noncestr=%s&timestamp=%s&url=%s",$wxticket, $wxnonceStr, $timestamp, $url);
         $wxSha1 = sha1($wxOri);
 
         $data = array(
@@ -106,7 +108,7 @@ class User extends CI_Controller {
         );
 
         var_dump($data);
-        var_dump(current_url());
+        var_dump($url);
 
 
         $this->load->view('creatquestion', $data);
