@@ -70,15 +70,19 @@
     var checkup = function(){
         if(!$("input[name='ques']").val()){
             alert('问题不能为空！');
+            return;
         }
         if(!$("input[name='ans1']").val()){
             alert('答案一不能为空！');
+            return;
         }
         if(!$("input[name='ans2']").val()){
             alert('答案二不能为空！');
+            return;
         }
         if(!$("input[name='ans3']").val()){
             alert('答案三不能为空！');
+            return;
         }
         $('#form').submit();
     }
