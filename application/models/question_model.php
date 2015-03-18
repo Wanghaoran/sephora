@@ -16,7 +16,7 @@ class question_model extends CI_Model {
             'a2' => $a2,
             'a3' => $a3,
             'true' => $true,
-            'addtime' => date('Y-m-d H:i:s'),
+            'addtime' => time(),
         );
 
         $this -> db -> insert('question', $data);
