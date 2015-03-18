@@ -22,19 +22,15 @@
 </div>
 <div class="main">
     <div class="content" id="content" data-q="n" data-style="questioner" data-a="n" data-share="n">
-        <section class="screen" id="screen_1">
-            <div class="s1_box">
+        <!-- 自己出题抽奖 显示结果 -->
+        <section class="screen" id="screen_9">
+            <div class="s9_box">
                 <img class="block" src="<?=$this->config->base_url()?>public/images/block.png">
-                <div class="s1_txt">
-                    <img src="<?=$this->config->base_url()?>public/images/s1_txt.png">
-                </div>
-                <div class="s1_btn_gift" id="s1_btn_gift">发礼包 赢大奖</div>
-                <div class="libao s1_libao">
-                    <a href="<?=$this->config->base_url()?>question"><img src="<?=$this->config->base_url()?>public/images/gift.png"></a>
-                </div>
+                <div class="s9_gift_cost" id="s9_gift_cost"><span class="coupon_cost"><?=$ttype?></span>元现金券</div>
+                <div class="s9_txt" id="s9_txt">真可惜，竟然没有抽中大奖<br>还好有丝芙兰<span class="coupon_cost">10</span>元现金券送上<br>优惠券代码：<span class="coupon_code"><?=$code?></span></div>
             </div>
-            <a href="<?=$this->config->base_url()?>usercenter" class="my_gift s_link" id="s1_my_gift">我的礼包</a>
-            <a href="<?=$this->config->base_url()?>terms" class="act_law s_link" id="s1_act_law">活动规则/免责条款</a>
+            <a class="btn_s9_home btn_common" id="btn_s9_home" href="http://www.sephora.cn/">去官网使用</a>
+            <div class="btn_s9_ques btn_common" id="btn_s9_ques"><a href="<?=$this->config->base_url()?>question">我还要出题</a></div>
         </section>
     </div>
 </div>

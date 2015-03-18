@@ -123,11 +123,12 @@ class User extends CI_Controller {
         $this -> load -> model('code_model');
         $uid = $this->session->userdata('sephora_wechat_id');
         $ip = $this->input->ip_address();
-        $code = $this -> code_model -> getcode(30, 2, $uid, $ip);
+        $ttype = 30;
+        $code = $this -> code_model -> getcode($ttype, 2, $uid, $ip);
 
         if(!$code){
             //again
-            $code = $this -> code_model -> getcode(30, 2, $uid, $ip);
+            $code = $this -> code_model -> getcode($ttype, 2, $uid, $ip);
         }
 
         if(!$code){
@@ -137,10 +138,18 @@ class User extends CI_Controller {
         //update question type
         $this -> question_model -> updatetype($qid);
 
+        $data = array(
+            'ttype' => $ttype,
+            'code' => $code,
+        );
+
+        $this->load->view('endquestion', $data);
+
+
     }
 
     public function usercenter(){
-
+        echo 'center';
     }
 
 }
