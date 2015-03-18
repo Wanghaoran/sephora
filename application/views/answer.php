@@ -22,23 +22,26 @@
 </div>
 <div class="main">
     <div class="content" id="content" data-q="n" data-style="questioner" data-a="n" data-share="n">
-        <!-- step1 选出想要问闺蜜的问题 -->
-        <section class="screen" id="screen_2">
-            <div class="s2_slogan">茫茫朋友圈<br>谁是最懂你的真命闺蜜？<br>找到她，一起赢取甜蜜好礼</div>
-            <div class="s2_question" id="question">
-                <h3>Step1</h3>
-                <h4>选出你的问题</h4>
-                <ul class="s2_q_list">
-                    <li data-list="1"><span></span>问题1：姐最满意自己哪一部分？</li>
-                    <li data-list="2"><span></span>问题2：哪种男生是姐的菜？</li>
-                    <li data-list="3"><span></span>问题3：姐是什么Cup？</li>
-                    <li data-list="4"><span></span>问题4：我在朋友圈是什么卦？</li>
-                    <li data-list="5"><span></span>问题5：该不该看男人手机？</li>
-                    <li class="custom"><a href="#">姐要自己出题！</a></li>
+        <!-- step2选出对应答案 -->
+        <section class="screen" id="screen_3">
+            <div class="s3_question" id="question">
+                <h3>Step2</h3>
+                <h4>选出你的答案</h4>
+                <h5 id="s3_ques_title">姐最满意自己哪一部分？</h5>
+                <ul class="s3_q_list">
+                    <?php foreach($answer_arr as $key => $value): ?>
+                        <li data-list="<?php echo$key;?>"><span></span><?php echo$key;?>：<?php echo$value;?></li>
+                    <?php endforeach; ?>
                 </ul>
-                <div class="s2_sure" id="s2_sure">
+                <div class="s3_sure top120" id="s3_sure">
                     <img src="<?=$this->config->base_url()?>public/images/btn_sure.jpg">
                 </div>
+                <div class="s3_back top120" id="s3_back">
+                    <a href="javascript:history.go(-1);"><img src="<?=$this->config->base_url()?>public/images/btn_back.jpg"></a>
+                </div>
+            </div>
+            <div class="libao s3_libao">
+                <img src="<?=$this->config->base_url()?>public/images/gift.png">
             </div>
         </section>
     </div>
@@ -54,14 +57,14 @@
 <script type="text/javascript">
     $(function(){
         Sephora.init();
-        $("#s2_sure").click(function() {
-            var active_val = $(".s2_q_list>li.active");
+        $("#s3_sure").click(function() {
+            var active_val = $(".s3_q_list>li.active");
             var ques = active_val.data("list");
             console.log(ques)
             if (active_val.length > 0) { //成功选择后
-                location.href='<?=$this->config->base_url()?>answer?q=' + ques;
+                location.href='<?=$this->config->base_url()?>creatquestion?q=<?php echo $q;?>&a=' + ques;
             } else {
-                alert("请选择一个问题。");  //当玩家没有做任何选择，就点击确定的情况
+                alert("请选择一个答案。");  //当玩家没有做任何选择，就点击确定的情况
             }
         })
         //var aaa = window.location.hash;

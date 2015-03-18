@@ -43,6 +43,8 @@ $route['404_override'] = '';
 $route['wechat'] = 'welcome/wechat_index';
 $route['terms'] = 'welcome/terms';
 $route['question'] = 'welcome/question';
+$route['answer'] = 'welcome/answer';
+$route['creatquestion'] = 'welcome/creatquestion';
 
 
 /* End of file routes.php */

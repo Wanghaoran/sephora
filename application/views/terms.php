@@ -9,16 +9,16 @@
     <title>姐最满意自己哪一部分？速速来答题，赢走我的真金犒赏。</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="<?=$this->config->base_url()?>/public/css/reset.css">
-    <link rel="stylesheet" href="<?=$this->config->base_url()?>/public/css/common.css">
-    <link rel="stylesheet" type="text/css" href="<?=$this->config->base_url()?>/public/css/main.css">
+    <link rel="stylesheet" href="<?=$this->config->base_url()?>public/css/reset.css">
+    <link rel="stylesheet" href="<?=$this->config->base_url()?>public/css/common.css">
+    <link rel="stylesheet" type="text/css" href="<?=$this->config->base_url()?>public/css/main.css">
 
 
 
 </head>
 <body>
 <div class="weixin_share_hidden">
-    <img src="<?=$this->config->base_url()?>/public/images/share_icon.jpg">
+    <img src="<?=$this->config->base_url()?>public/images/share_icon.jpg">
 </div>
 <div class="main">
     <div class="content" id="content" data-q="n" data-style="questioner" data-a="n" data-share="n">
@@ -35,11 +35,11 @@
 
 
 
-<script type="text/javascript" src="<?=$this->config->base_url()?>/public/js/zepto.js"></script>
-<script type="text/javascript" src="<?=$this->config->base_url()?>/public/js/fastclick.js"></script>
-<script type="text/javascript" src="<?=$this->config->base_url()?>/public/js/zepto.cookie.js"></script>
-<script type="text/javascript" src="<?=$this->config->base_url()?>/public/js/common.js"></script>
-<script type="text/javascript" src="<?=$this->config->base_url()?>/public/js/main.js"></script>
+<script type="text/javascript" src="<?=$this->config->base_url()?>public/js/zepto.js"></script>
+<script type="text/javascript" src="<?=$this->config->base_url()?>public/js/fastclick.js"></script>
+<script type="text/javascript" src="<?=$this->config->base_url()?>public/js/zepto.cookie.js"></script>
+<script type="text/javascript" src="<?=$this->config->base_url()?>public/js/common.js"></script>
+<script type="text/javascript" src="<?=$this->config->base_url()?>public/js/main.js"></script>
 <script type="text/javascript">
     $(function(){
         Sephora.init();
