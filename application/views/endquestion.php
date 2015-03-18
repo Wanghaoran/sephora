@@ -30,7 +30,7 @@
                 <div class="s9_txt" id="s9_txt">真可惜，竟然没有抽中大奖<br>还好有丝芙兰<span class="coupon_cost">10</span>元现金券送上<br>优惠券代码：<span class="coupon_code"><?=$code?></span></div>
             </div>
             <a class="btn_s9_home btn_common" id="btn_s9_home" href="http://www.sephora.cn/">去官网使用</a>
-            <div class="btn_s9_ques btn_common" id="btn_s9_ques"><a href="<?=$this->config->base_url()?>question">我还要出题</a></div>
+            <div class="btn_s9_ques btn_common" id="btn_s9_ques" onclick="location.href='<?=$this->config->base_url()?>question';">我还要出题</div>
         </section>
     </div>
 </div>
