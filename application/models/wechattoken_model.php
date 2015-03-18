@@ -40,4 +40,34 @@ class wechattoken_model extends CI_Model {
         return $token;
     }
 
+    public function getticket(){
+        $this -> db -> where('name', 'jsapi_ticket');
+        $this -> db -> where('time >=', time() - 7000);
+        $query = $this -> db -> get('sephora_wechattoken');
+        return $query -> result_array();
+    }
+
+    public function queryticket($token){
+        $res = file_get_contents('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' . $token . '&type=jsapi');
+        $res = json_decode($res, true);
+
+        $ticket = $res['ticket'];
+
+        if(!$ticket){
+            return false;
+        }
+
+        $data = array(
+            'value' => $ticket,
+            'time' => time(),
+        );
+        $this -> db -> where('name', 'jsapi_ticket');
+        $this -> db -> update('sephora_wechattoken', $data);
+        if(!$this -> db -> affected_rows()){
+            return false;
+        }
+        return $token;
+
+    }
+
 }

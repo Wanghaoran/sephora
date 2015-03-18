@@ -80,7 +80,19 @@ class User extends CI_Controller {
             die('<h1>Get Token Fail!</h1>');
         }
 
-        var_dump($token);
+        //get wechat ticket
+        $ticket_arr = $this -> wechattoken_model -> getticket();
+        if(!$ticket_arr){
+            $ticket = $this -> wechattoken_model -> queryticket($token);
+        }else{
+            $ticket = $ticket_arr[0]['value'];
+        }
+
+        if(!$ticket){
+            die('<h1>Get Ticket Fail!</h1>');
+        }
+
+        var_dump($ticket);
 
 
         $this->load->view('creatquestion');
