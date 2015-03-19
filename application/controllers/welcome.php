@@ -173,14 +173,11 @@ class Welcome extends CI_Controller {
             $code_pool[] = 50;
         }
 
-        $ctype = $code_pool[array_rand($code_pool)]
+        $ctype = $code_pool[array_rand($code_pool)];
 
         var_dump($ctype);
     }
 
-    public function nocode(){
-        $this->load->view('nocode');
-    }
 
     public function completequestion($q){
         $this->load->helper('url');
@@ -188,6 +185,10 @@ class Welcome extends CI_Controller {
             redirect('welcome/oauth2_authorize2?q=' . $q);
         }
         var_dump($q);
+    }
+
+    public function nocode(){
+        $this->load->view('nocode');
     }
 }
 
