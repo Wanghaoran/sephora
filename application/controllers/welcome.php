@@ -172,10 +172,19 @@ class Welcome extends CI_Controller {
         for($i=0; $i<$code_info['50code']; $i++){
             $code_pool[] = 50;
         }
-
         $ctype = $code_pool[array_rand($code_pool)];
 
-        var_dump($ctype);
+        //get code
+        $this -> load -> model('code_model');
+        $uid = $this->session->userdata('sephora_wechat_id');
+        $ip = $this->input->ip_address();
+        $code = $this -> code_model -> getcode($ctype, 3, $uid, $q, $ip);
+
+        //rec code question user
+        $this -> load -> model('questionuser_model');
+        $this -> questionuser_model -> insertinfo($q, $uid, $ctype, $code);
+
+        var_dump($code);
     }
 
 
