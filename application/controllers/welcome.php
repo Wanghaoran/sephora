@@ -193,7 +193,7 @@ class Welcome extends CI_Controller {
             'code' => $code,
             'ctype' => $ctype,
         );
-        $this->load->view('questions', $data);
+        $this->load->view('trueanswer', $data);
 
     }
 
