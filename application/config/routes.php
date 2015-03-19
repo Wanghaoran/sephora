@@ -51,7 +51,7 @@ $route['endquestion/(:num)'] = 'user/endquestion/$1';
 $route['complete/(:num)'] = 'welcome/completequestion/$1';
 $route['trueanswer/(:num)'] = 'welcome/trueanswer/$1';
 $route['nocode'] = 'welcome/nocode';
-$route['usercenter'] = 'user/usercenter';
+$route['usercenter'] = 'welcome/usercenter';
 
 
 /* End of file routes.php */
