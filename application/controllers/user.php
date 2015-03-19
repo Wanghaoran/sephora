@@ -154,8 +154,8 @@ class User extends CI_Controller {
 
         $this->load->view('endquestion', $data);
 
-
     }
+
 
 }
 

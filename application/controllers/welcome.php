@@ -32,12 +32,12 @@ class Welcome extends CI_Controller {
 
         $this->load->helper('url');
         if(empty($_GET['code'])){
-            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx949efd128cd9bf73&redirect_uri=' . urlencode('http://sephora.cnhtk.cn/index.php/welcome/oauth2_authorize') . '&response_type=code&scope=snsapi_userinfo&state=' . $q . '#wechat_redirect';
+            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' . $this -> config -> item('wechat_appid') . '&redirect_uri=' . urlencode('http://sephora.cnhtk.cn/index.php/welcome/oauth2_authorize') . '&response_type=code&scope=snsapi_userinfo&state=' . $q . '#wechat_redirect';
             redirect($token_url);
         }
 
         //get token
-        $token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx949efd128cd9bf73&secret=f5b75c8db05e107944f144b6eff2b304&code=' . $_GET['code'] . '&grant_type=authorization_code';
+        $token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' . $this -> config -> item('wechat_appid') . '&secret=' . $this -> config -> item('wechat_appsecret') . '&code=' . $_GET['code'] . '&grant_type=authorization_code';
         $result_json = file_get_contents($token_url);
         $result_arr = json_decode($result_json, true);
         if(!empty($result_arr['errcode'])){
@@ -72,7 +72,7 @@ class Welcome extends CI_Controller {
     }
 
     public function question($q){
-        var_dump($q);
+
     }
 }
 

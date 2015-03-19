@@ -2,8 +2,11 @@
 
 class wechattoken_model extends CI_Model {
 
+    var $CI = '';
+
     public function __construct()
     {
+        $this -> CI = &get_instance();
         parent::__construct();
         $this -> load -> database();
     }
@@ -18,7 +21,7 @@ class wechattoken_model extends CI_Model {
 
     public function querytoken(){
 
-        $res = file_get_contents('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx949efd128cd9bf73&secret=f5b75c8db05e107944f144b6eff2b304');
+        $res = file_get_contents('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=' . $this -> CI -> config -> item('wechat_appid') . '&secret=' . $this -> CI -> config -> item('wechat_appsecret') . '');
         $res = json_decode($res, true);
 
         $token = $res['access_token'];

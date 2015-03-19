@@ -401,5 +401,8 @@ $config['questions'] = array(
     ),
 );
 
+$config['wechat_appid'] = 'wx949efd128cd9bf73';
+$config['wechat_appsecret'] = 'f5b75c8db05e107944f144b6eff2b304';
+
 /* End of file config.php */
 /* Location: ./application/config/config.php */
