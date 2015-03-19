@@ -22,15 +22,12 @@
 </div>
 <div class="main">
     <div class="content" id="content" data-q="n" data-style="questioner" data-a="n" data-share="n">
-        <!-- 自己出题抽奖 显示结果 -->
-        <section class="screen" id="screen_9">
-            <div class="s9_box">
-                <img class="block" src="<?=$this->config->base_url()?>public/images/block.png">
-                <div class="s9_gift_cost" id="s9_gift_cost"><span class="coupon_cost"><?=$ttype?></span>元现金券</div>
-                <div class="s9_txt" id="s9_txt">真可惜，竟然没有抽中大奖<br>还好有丝芙兰<span class="coupon_cost"><?=$ttype?></span>元现金券送上<br>优惠券代码：<span class="coupon_code"><?=$code?></span></div>
+        <!-- 错误提示页面 -->
+        <section class="screen" id="screen_11">
+            <div class="errorText">
+                猜过了还来？想要礼金自己去出题吧！
             </div>
-            <a class="btn_s9_home btn_common" id="btn_s9_home" href="http://www.sephora.cn/">去官网使用</a>
-            <div class="btn_s9_ques btn_common" id="btn_s9_ques" onclick="location.href='<?=$this->config->base_url()?>question';">出题再抽一次</div>
+            <a href="#" class="btn_back btn_s7_center btn_common" id="btn_s7_back">我要答题</a>
         </section>
     </div>
 </div>

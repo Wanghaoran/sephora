@@ -181,7 +181,7 @@ class Welcome extends CI_Controller {
         //check user
         $this -> load -> model('questionuser_model');
         if($this -> questionuser_model -> checkuser($q, $uid)){
-            redirect('complete/' . $q);
+            redirect('errorpage');
         }
 
         //query question
@@ -203,7 +203,7 @@ class Welcome extends CI_Controller {
         //check user
         $this -> load -> model('questionuser_model');
         if($this -> questionuser_model -> checkuser($q, $this->session->userdata('sephora_wechat_id'))){
-            redirect('complete/' . $q);
+            redirect('errorpage');
         }
 
         //query question code
@@ -283,6 +283,11 @@ class Welcome extends CI_Controller {
 
     public function nocode(){
         $this->load->view('nocode');
+    }
+
+    public function errorpage(){
+        $this->load->view('errorpage');
+
     }
 
     public function usercenter(){

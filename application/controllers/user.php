@@ -68,7 +68,6 @@ class User extends CI_Controller {
             $a2 = $this -> config -> item('questions')[$this->input->get('q')]['answer'][2];
             $a3 = $this -> config -> item('questions')[$this->input->get('q')]['answer'][3];
             $true = $this->input->get('a');
-
         }
         $qid = $this -> question_model -> insertquestion($uid, $q, $a1, $a2, $a3, $true);
         if(!$qid){
@@ -114,6 +113,7 @@ class User extends CI_Controller {
             'nonceStr' => $wxnonceStr,
             'signature' => $wxSha1,
             'qid' => $qid,
+            'q' => $q,
         );
         $this->load->view('creatquestion', $data);
     }

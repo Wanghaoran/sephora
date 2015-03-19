@@ -52,6 +52,7 @@ $route['complete/(:num)'] = 'welcome/completequestion/$1';
 $route['trueanswer/(:num)'] = 'welcome/trueanswer/$1';
 $route['nocode'] = 'welcome/nocode';
 $route['usercenter'] = 'welcome/usercenter';
+$route['errorpage'] = 'welcome/errorpage';
 
 
 /* End of file routes.php */

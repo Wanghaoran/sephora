@@ -71,7 +71,7 @@
 
         wx.ready(function() {
             wx.onMenuShareTimeline({
-                title: '速速来答题，赢走我的真金犒赏。', // 分享标题
+                title: '<?=$q?> 答对赏赐', // 分享标题
                 link: '<?=$this->config->base_url()?>q/<?=$qid;?>', // 分享链接
                 imgUrl: '<?=$this->config->base_url()?>public/images/icon.jpg', // 分享图标
                 success: function () {
@@ -82,8 +82,8 @@
                 }
             });
             wx.onMenuShareAppMessage({
-                title: '速速来答题，赢走我的真金犒赏。', // 分享标题
-                desc: '姐最满意自己哪一部分？速速来答题，赢走我的真金犒赏。', // 分享描述
+                title: '<?=$q?> 答对赏赐', // 分享标题
+                desc: '<?=$q?> 答对赏赐', // 分享描述
                 link: '<?=$this->config->base_url()?>q/<?=$qid;?>', // 分享链接
                 imgUrl: '<?=$this->config->base_url()?>public/images/icon.jpg', // 分享图标
                 type: 'link', // 分享类型,music、video或link，不填默认为link
