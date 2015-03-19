@@ -116,6 +116,51 @@ class Welcome extends CI_Controller {
 
     }
 
+    public function oauth2_authorize3(){
+
+        $q = $_GET['q'];
+
+        $this->load->helper('url');
+        if(empty($_GET['code'])){
+            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' . $this -> config -> item('wechat_appid') . '&redirect_uri=' . urlencode('http://sephora.cnhtk.cn/index.php/welcome/oauth2_authorize2') . '&response_type=code&scope=snsapi_userinfo&state=' . $q . '#wechat_redirect';
+            redirect($token_url);
+        }
+
+        //get token
+        $token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' . $this -> config -> item('wechat_appid') . '&secret=' . $this -> config -> item('wechat_appsecret') . '&code=' . $_GET['code'] . '&grant_type=authorization_code';
+        $result_json = file_get_contents($token_url);
+        $result_arr = json_decode($result_json, true);
+        if(!empty($result_arr['errcode'])){
+            die('<h1>Authorization failure1!' .  $result_arr['errmsg'] . '</h1>');
+        }
+
+        //get user info
+        $info_url = 'https://api.weixin.qq.com/sns/userinfo?access_token=' . $result_arr['access_token'] . '&openid=' . $result_arr['openid'] . '&lang=zh_CN';
+        $result_json = file_get_contents($info_url);
+        $result_arr = json_decode($result_json, true);
+        if(!empty($result_arr['errcode'])){
+            die('<h1>Authorization failure2!' .  $result_arr['errmsg'] . '</h1>');
+        }
+
+        //select user
+        $this -> load -> model('wechatuser_model');
+        if($query_result = $this -> wechatuser_model -> queryhave($result_arr['openid'])){
+            //write session
+            $this->session->set_userdata('sephora_wechat_id', $query_result[0]['id']);
+        }else{
+            //create user
+            if(!$insert_id = $this -> wechatuser_model -> insertuser($result_arr['openid'], $result_arr['nickname'], $result_arr['sex'], $result_arr['language'], $result_arr['city'], $result_arr['province'], $result_arr['country'], $result_arr['headimgurl'])){
+                die('<h1>Authorization failure3! Insert User Error</h1>');
+            }else{
+                //write session
+                $this->session->set_userdata('sephora_wechat_id', $insert_id);
+            }
+        }
+
+        redirect('welcome/' . $_GET['state']);
+
+    }
+
     public function question($q){
 
         $this->load->helper('url');
@@ -238,6 +283,23 @@ class Welcome extends CI_Controller {
 
     public function nocode(){
         $this->load->view('nocode');
+    }
+
+    public function usercenter(){
+
+        if(!$this->session->userdata('sephora_wechat_id')){
+            redirect('welcome/oauth2_authorize3?q=usercenter');
+        }
+
+        $this -> load -> model('wechatuser_model');
+        $user_info = $this -> wechatuser_model -> queryhave2($this->session->userdata('sephora_wechat_id'));
+
+        var_dump($user_info);
+
+        $data = array(
+
+        );
+        $this->load->view('usercenter', $data);
     }
 }
 

@@ -156,17 +156,7 @@ class User extends CI_Controller {
 
     }
 
-    public function usercenter(){
-        $this -> load -> model('wechatuser_model');
-        $user_info = $this -> wechatuser_model -> queryhave2($this->session->userdata('sephora_wechat_id'));
 
-        var_dump($user_info);
-
-        $data = array(
-
-        );
-        $this->load->view('usercenter', $data);
-    }
 
 
 }
