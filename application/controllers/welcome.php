@@ -127,9 +127,19 @@ class Welcome extends CI_Controller {
         //query question uid
         $this -> load -> model('question_model');
         $uid = $this -> question_model -> getuid($q);
+
+        //myself
+        if($this->session->userdata('sephora_wechat_id') == 'uid'){
+            redirect('complete/' . $q);
+
+        }
         var_dump($q);
         var_dump($uid);
 
+    }
+
+    public function completequestion($q){
+        var_dump($q);
     }
 }
 
