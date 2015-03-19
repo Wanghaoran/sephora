@@ -185,8 +185,7 @@ class Welcome extends CI_Controller {
         $this -> questionuser_model -> insertinfo($q, $uid, $ctype, $code);
 
         //update question code num
-        echo $code_info[$ctype.'code'];
-//        $this -> questionuser_model -> updatequestioncode($q, $ctype, $);
+        $this -> questionuser_model -> updatequestioncode($q, $ctype, $code_info[$ctype.'code'] - 1);
 
 
         $data = array(

@@ -58,8 +58,13 @@ class question_model extends CI_Model {
         return $result;
     }
 
-    public function updatequestioncode($qid, $ctype){
-
+    public function updatequestioncode($qid, $ctype, $num){
+        $data = array(
+            $ctype.'code' => $num,
+        );
+        $this -> db -> where('id', $qid);
+        $this -> db -> update('question', $data);
+        return $this -> db -> affected_rows();
     }
 
 
