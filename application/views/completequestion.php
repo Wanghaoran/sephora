@@ -37,12 +37,14 @@
                     <div class="s8_txt_li">
                         <?php if(substr($value['code'], 1, 1) == 1): ?>
                             <h4>10元现金礼券<span><?=$value['code']?></span></h4>
+                            <p>请在官网结账前输入兑换号使用。消费满100元即可抵扣，截止日期：2015年5月30日</p>
                         <?php elseif(substr($value['code'], 1, 1) == 3): ?>
                             <h4>30元现金礼券<span><?=$value['code']?></span></h4>
+                            <p>请在官网结账前输入兑换号使用。消费满300元即可抵扣，截止日期：2015年5月30日</p>
                         <?php elseif(substr($value['code'], 1, 1) == 5): ?>
                             <h4>50元现金礼券<span><?=$value['code']?></span></h4>
+                            <p>请在官网结账前输入兑换号使用。消费满500元即可抵扣，截止日期：2015年5月30日</p>
                         <?php endif; ?>
-                        <p>请在官网结账前输入兑换号使用。消费满100元即可抵扣，截止日期：2015年5月30日</p>
                     </div>
                 <?php endforeach; ?>
             </div>
