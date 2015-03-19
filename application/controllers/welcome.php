@@ -139,6 +139,9 @@ class Welcome extends CI_Controller {
     }
 
     public function completequestion($q){
+        if(!$this->session->userdata('sephora_wechat_id')){
+            redirect('welcome/oauth2_authorize2?q=' . $q);
+        }
         var_dump($q);
     }
 }
