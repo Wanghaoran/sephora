@@ -291,13 +291,21 @@ class Welcome extends CI_Controller {
             redirect('welcome/oauth2_authorize3?q=usercenter');
         }
 
-        $this -> load -> model('wechatuser_model');
-        $user_info = $this -> wechatuser_model -> queryhave2($this->session->userdata('sephora_wechat_id'));
+        $uid = $this->session->userdata('sephora_wechat_id');
 
-        var_dump($user_info);
+        //read my code
+        $this -> load -> model('code_model');
+        $code10 = $this -> code_model -> selectmycode(10, $uid);
+        $code30 = $this -> code_model -> selectmycode(30, $uid);
+        $code50 = $this -> code_model -> selectmycode(50, $uid);
+
+
+        $this -> load -> model('wechatuser_model');
+        $user_info = $this -> wechatuser_model -> queryhave2($uid);
 
         $data = array(
-
+            'code_arr' => array_merge($code10, $code30, $code50),
+            'icon' => $user_info[0]['headimgurl']
         );
         $this->load->view('usercenter', $data);
     }
