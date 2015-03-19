@@ -184,7 +184,17 @@ class Welcome extends CI_Controller {
         $this -> load -> model('questionuser_model');
         $this -> questionuser_model -> insertinfo($q, $uid, $ctype, $code);
 
-        var_dump($code);
+        //update question code num
+        echo $code_info[$ctype.'code'];
+//        $this -> questionuser_model -> updatequestioncode($q, $ctype, $);
+
+
+        $data = array(
+            'code' => $code,
+            'ctype' => $ctype,
+        );
+        $this->load->view('questions', $data);
+
     }
 
 

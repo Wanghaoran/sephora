@@ -56,6 +56,9 @@ class question_model extends CI_Model {
             '50code' => $query -> result_array()[0]['50code'],
         );
         return $result;
+    }
+
+    public function updatequestioncode($qid, $ctype){
 
     }
 
