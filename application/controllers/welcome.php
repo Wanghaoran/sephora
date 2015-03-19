@@ -224,7 +224,6 @@ class Welcome extends CI_Controller {
             'code_arr' => array_merge($code10, $code30, $code50),
         );
 
-        var_dump($data['code_arr']);
         $this->load->view('completequestion', $data);
 
     }

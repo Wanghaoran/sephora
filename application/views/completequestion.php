@@ -33,14 +33,18 @@
             </div>
             <div class="s8_coupon_box" id="s8_coupon_box">
                 <h3>我的优惠券</h3>
-                <div class="s8_txt_li">
-                    <h4>10元现金礼券<span>999999</span></h4>
-                    <p>请在官网结账前输入兑换号使用。消费满100元即可抵扣，截止日期：2015年5月30日</p>
-                </div>
-                <div class="s8_txt_li">
-                    <h4>10元现金礼券<span>999999</span></h4>
-                    <p>请在官网结账前输入兑换号使用。消费满100元即可抵扣，截止日期：2015年5月30日</p>
-                </div>
+                <?php foreach($code_arr as $value): ?>
+                    <div class="s8_txt_li">
+                        <?php if(substr($value['code'], 1, 1) == 1): ?>
+                            <h4>10元现金礼券<span><?=$value['code']?></span></h4>
+                        <?php elseif(substr($value['code'], 1, 1) == 3): ?>
+                            <h4>30元现金礼券<span><?=$value['code']?></span></h4>
+                        <?php elseif(substr($value['code'], 1, 1) == 5): ?>
+                            <h4>50元现金礼券<span><?=$value['code']?></span></h4>
+                        <?php endif; ?>
+                        <p>请在官网结账前输入兑换号使用。消费满100元即可抵扣，截止日期：2015年5月30日</p>
+                    </div>
+                <?php endforeach; ?>
             </div>
             <a class="btn_s8_home btn_common" id="btn_s8_home" href="http://www.sephora.cn/">去官网使用</a>
             <!-- <div class="btn_s8_ques btn_common" id="btn_s8_ques">我也要出题</div> -->
