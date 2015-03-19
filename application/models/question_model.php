@@ -61,7 +61,7 @@ class question_model extends CI_Model {
     public function updatequestioncode($qid, $ctype, $num){
         $set = $ctype.'code';
         $data = array(
-            '10code' => $num,
+            $set => $num,
         );
         $this -> db -> where('id', $qid);
         $this -> db -> update('question', $data);
