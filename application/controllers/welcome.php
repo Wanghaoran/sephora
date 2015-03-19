@@ -157,7 +157,7 @@ class Welcome extends CI_Controller {
         $code_info = $this -> question_model -> getquestioncode($q);
 
         if($code_info['10code'] == 0 && $code_info['30code'] == 0 && $code_info['50code'] == 0){
-            redirect('welcome/oauth2_authorize2?q=' . $q);
+            redirect('welcome/nocode');
         }
 
         var_dump($code_info);
