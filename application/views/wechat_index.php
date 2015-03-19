@@ -34,7 +34,7 @@
                 </div>
             </div>
             <a href="<?=$this->config->base_url()?>question" class="my_gift s_link" id="s1_my_gift">我的礼包</a>
-            <a href="<?=$this->config->base_url()?>terms" class="act_law s_link" id="s1_act_law">活动规则/免责条款</a>
+            <a href="<?=$this->config->base_url()?>terms" class="act_law s_link" id="s1_act_law">活动规则</a>
         </section>
     </div>
 </div>

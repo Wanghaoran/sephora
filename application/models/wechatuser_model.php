@@ -13,13 +13,12 @@ class wechatuser_model extends CI_Model {
         return $query -> result_array();
     }
 
-    /*
-    //查询用户是否存在 id
+
     public function queryhave2($id){
         $query = $this -> db -> get_where('user', array('id' => $id), 1);
         return $query -> result_array();
     }
-    */
+
 
     public function insertuser($openid, $nickname, $sex, $language, $city, $province, $country, $headimgurl){
         $data = array(
