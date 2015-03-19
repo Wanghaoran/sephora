@@ -167,10 +167,10 @@ class Welcome extends CI_Controller {
             $code_pool[] = 10;
         }
         for($i=0; $i<$code_info['30code']; $i++){
-            $code_pool[] = 10;
+            $code_pool[] = 30;
         }
         for($i=0; $i<$code_info['50code']; $i++){
-            $code_pool[] = 10;
+            $code_pool[] = 50;
         }
 
         var_dump($code_pool);
