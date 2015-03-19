@@ -227,8 +227,6 @@ class Welcome extends CI_Controller {
 
         @$icon = $icon_arr[array_rand($icon_arr)]['headimgurl'];
 
-        var_dump($icon);
-
         $data = array(
             'code_arr' => array_merge($code10, $code30, $code50),
             'icon' => $icon,

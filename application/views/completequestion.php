@@ -25,7 +25,11 @@
             <div class="c_header_box">
                 <img src="<?=$this->config->base_url()?>public/images/head_cover.png" class="cover_img">
                 <div class="custom_header">
-                    <img src="<?=$this->config->base_url()?>public/images/test.jpg">
+                    <?php if($icon): ?>
+                        <img src="<?=$icon;?>">
+                    <?php else: ?>
+                        <img src="<?=$this->config->base_url()?>public/images/wenhao.png">
+                    <?php endif; ?>
                 </div>
                 <div class="c_header">
                     <img src="<?=$this->config->base_url()?>public/images/crown.png">
