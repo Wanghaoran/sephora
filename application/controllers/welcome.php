@@ -173,7 +173,9 @@ class Welcome extends CI_Controller {
             $code_pool[] = 50;
         }
 
-        var_dump($code_pool);
+        $ctype = $code_pool[array_rand($code_pool)]
+
+        var_dump($ctype);
     }
 
     public function nocode(){
