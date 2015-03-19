@@ -211,7 +211,20 @@ class Welcome extends CI_Controller {
         if(!$this->session->userdata('sephora_wechat_id')){
             redirect('welcome/oauth2_authorize2?q=' . $q);
         }
-        $data = array();
+
+        $uid = $this->session->userdata('sephora_wechat_id');
+
+        //read my code
+        $this -> load -> model('code_model');
+        $code10 = $this -> code_model -> selectmycode(10, $uid);
+        $code30 = $this -> code_model -> selectmycode(30, $uid);
+        $code50 = $this -> code_model -> selectmycode(50, $uid);
+
+        $data = array(
+            'code_arr' => array_merge($code10, $code30, $code50),
+        );
+
+        var_dump($data['code_arr']);
         $this->load->view('completequestion', $data);
 
     }
