@@ -154,7 +154,7 @@ class Welcome extends CI_Controller {
 
         //query question code
         $this -> load -> model('question_model');
-        $code_info = $this -> question_model -> getquestioncode();
+        $code_info = $this -> question_model -> getquestioncode($q);
 
         var_dump($code_info);
 
