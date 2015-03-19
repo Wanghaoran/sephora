@@ -154,7 +154,9 @@ class User extends CI_Controller {
     }
 
     public function usercenter(){
-        echo 'center';
+        $data = array();
+        $this->load->view('usercenter', $data);
+
     }
 
 }
