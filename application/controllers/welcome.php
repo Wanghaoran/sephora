@@ -220,6 +220,15 @@ class Welcome extends CI_Controller {
         $code30 = $this -> code_model -> selectmycode(30, $uid);
         $code50 = $this -> code_model -> selectmycode(50, $uid);
 
+        //user icon
+        $this -> load -> model('questionuser_model');
+
+        $icon_arr = $this -> questionuser_model -> selectusericon($q);
+
+        var_dump($icon_arr);
+
+
+
         $data = array(
             'code_arr' => array_merge($code10, $code30, $code50),
         );
