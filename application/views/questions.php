@@ -67,8 +67,7 @@
             var This = this;
             var rel_val = $("#s10_q_list>li.active").attr("data-list");
             if (rel_val == answer) {
-                alert('答对啦！');
-//                location.href= '#' //答案正确,获取优惠券 @后端
+                location.href= '<?=$this->config->base_url()?>trueanswer/<?=$q;?>' //答案正确,获取优惠券 @后端
             } else {
                 $("#answer_error").removeClass("dn"); //答案不正确  弹出提示
             }

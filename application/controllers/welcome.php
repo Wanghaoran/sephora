@@ -140,6 +140,7 @@ class Welcome extends CI_Controller {
         $question = $this -> question_model -> getquestion($q);
         $data = array(
             'question' => $question,
+            'q' => $q,
         );
 
         $this->load->view('questions', $data);
