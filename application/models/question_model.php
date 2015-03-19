@@ -43,5 +43,10 @@ class question_model extends CI_Model {
         return $query -> result_array()[0]['uid'];
     }
 
+    public function getquestion($qid){
+        $query = $this -> db -> get_where('question', array('id' => $qid), 1);
+        return $query -> result_array()[0];
+    }
+
 
 }

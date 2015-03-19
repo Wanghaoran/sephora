@@ -22,17 +22,17 @@
 </div>
 <div class="main">
     <!-- 可以直接 在 data-a      标签设置答案属性 @后端 -->
-    <div class="content" id="content" data-q="n" data-style="questioner" data-a="a1" data-share="n">
+    <div class="content" id="content" data-q="n" data-style="questioner" data-a="<?=$question['true']?>" data-share="n">
         <!-- 回答问题  -->
         <section class="screen" id="screen_10">
             <div class="s10_question" id="question">
                 <h3>妞，速速来回答我的小秘“蜜”</h3>
                 <h4>答对有奖</h4>
-                <h5 id="s10_ques_title">姐最满意自己哪一部分？</h5>
+                <h5 id="s10_ques_title"><?=$question['q']?></h5>
                 <ul class="s10_q_list" id="s10_q_list">
-                    <li data-list="a1"><span></span>a：前凸后翘</li>
-                    <li data-list="a2"><span></span>b：颜值爆表</li>
-                    <li data-list="a3"><span></span>c：姐哪儿都美</li>
+                    <li data-list="1"><span></span>a：<?=$question['a1']?></li>
+                    <li data-list="2"><span></span>b：<?=$question['a2']?></li>
+                    <li data-list="3"><span></span>c：<?=$question['a3']?></li>
                 </ul>
                 <div class="s10_sure" id="s10_sure">
                     <img src="<?=$this->config->base_url()?>public/images/btn_sure.jpg">
@@ -67,7 +67,8 @@
             var This = this;
             var rel_val = $("#s10_q_list>li.active").attr("data-list");
             if (rel_val == answer) {
-                location.href= '#' //答案正确,获取优惠券 @后端
+                alert('答对啦！');
+//                location.href= '#' //答案正确,获取优惠券 @后端
             } else {
                 $("#answer_error").removeClass("dn"); //答案不正确  弹出提示
             }

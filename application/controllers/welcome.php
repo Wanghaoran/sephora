@@ -135,8 +135,13 @@ class Welcome extends CI_Controller {
 
         //查询当前登陆用户是否已经打开过礼包
 
+        $question = $this -> question_model -> getquestion($q);
+
+        $data = array(
+            'question' => $question,
+        );
         //打开问题
-        $this->load->view('questions');
+        $this->load->view('questions', $data);
 
     }
 
