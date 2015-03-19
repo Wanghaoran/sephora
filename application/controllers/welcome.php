@@ -27,9 +27,12 @@ class Welcome extends CI_Controller {
     }
 
     public function oauth2_authorize(){
+
+        $q = $_GET['q'];
+
         $this->load->helper('url');
         if(empty($_GET['code'])){
-            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx949efd128cd9bf73&redirect_uri=' . urlencode('http://sephora.cnhtk.cn/index.php/welcome/oauth2_authorize') . '&response_type=code&scope=snsapi_userinfo&state=question#wechat_redirect';
+            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx949efd128cd9bf73&redirect_uri=' . urlencode('http://sephora.cnhtk.cn/index.php/welcome/oauth2_authorize') . '&response_type=code&scope=snsapi_userinfo&state=' . $q . '#wechat_redirect';
             redirect($token_url);
         }
 

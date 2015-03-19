@@ -7,7 +7,12 @@ class User extends CI_Controller {
         //check authorization
         if(!$this->session->userdata('sephora_wechat_id')){
             $this->load->helper('url');
-            redirect('welcome/oauth2_authorize');
+            if($method == 'usercenter'){
+                redirect('welcome/oauth2_authorize?q=usercenter');
+            }else{
+                redirect('welcome/oauth2_authorize?q=question');
+
+            }
         }
 
         if (method_exists($this, $method))
