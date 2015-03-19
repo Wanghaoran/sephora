@@ -225,14 +225,9 @@ class Welcome extends CI_Controller {
 
         $icon_arr = $this -> questionuser_model -> selectusericon($q);
 
+        @$icon = $icon_arr[array_rand($icon_arr)]['headimgurl'];
 
-        if(!$icon_arr){
-            $icon = $icon_arr[array_rand($icon_arr)]['headimgurl'];
-        }else{
-            $icno = '';
-        }
-
-        var_dump($icon_arr);
+        var_dump($icon);
 
         $data = array(
             'code_arr' => array_merge($code10, $code30, $code50),
