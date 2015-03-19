@@ -156,11 +156,24 @@ class Welcome extends CI_Controller {
         $this -> load -> model('question_model');
         $code_info = $this -> question_model -> getquestioncode($q);
 
+        //no code
         if($code_info['10code'] == 0 && $code_info['30code'] == 0 && $code_info['50code'] == 0){
             redirect('welcome/nocode');
         }
 
-        var_dump($code_info);
+        //create code pool
+        $code_pool = array();
+        for($i=0; $i<$code_info['10code']; $i++){
+            $code_pool[] = 10;
+        }
+        for($i=0; $i<$code_info['30code']; $i++){
+            $code_pool[] = 10;
+        }
+        for($i=0; $i<$code_info['50code']; $i++){
+            $code_pool[] = 10;
+        }
+
+        var_dump($code_pool);
     }
 
     public function nocode(){
