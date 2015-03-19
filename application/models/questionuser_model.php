@@ -18,8 +18,12 @@ class Questionuser_model extends CI_Model {
         );
 
         $this -> db -> insert('questionuser', $data);
-
         return $this->db->insert_id();
+    }
+
+    public function checkuser($qid, $uid){
+        $query = $this -> db -> get_where('questionuser', array('qid' => $qid, 'uid' => $uid), 1);
+        return $query -> result_array();
     }
 
 }

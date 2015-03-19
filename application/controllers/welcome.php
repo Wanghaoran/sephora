@@ -133,8 +133,11 @@ class Welcome extends CI_Controller {
 //            redirect('complete/' . $q);
 //        }
 
-        //查询当前登陆用户是否已经打开过礼包
-
+        //check user
+        $this -> load -> model('questionuser_model');
+        if($this -> questionuser_model -> checkuser($q, $uid)){
+            redirect('complete/' . $q);
+        }
 
         //query question
         $question = $this -> question_model -> getquestion($q);
@@ -150,6 +153,12 @@ class Welcome extends CI_Controller {
         $this->load->helper('url');
         if(!$this->session->userdata('sephora_wechat_id')){
             redirect('welcome/oauth2_authorize2?q=' . $q);
+        }
+
+        //check user
+        $this -> load -> model('questionuser_model');
+        if($this -> questionuser_model -> checkuser($q, $this->session->userdata('sephora_wechat_id'))){
+            redirect('complete/' . $q);
         }
 
         //query question code
@@ -181,7 +190,6 @@ class Welcome extends CI_Controller {
         $code = $this -> code_model -> getcode($ctype, 3, $uid, $q, $ip);
 
         //rec code question user
-        $this -> load -> model('questionuser_model');
         $this -> questionuser_model -> insertinfo($q, $uid, $ctype, $code);
 
         //update question code num
