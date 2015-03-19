@@ -29,4 +29,9 @@ class Code_model extends CI_Model {
         }
         return $a[0]['code'];
     }
+
+    public function selectmycode($ctype, $uid){
+        $query = $this -> db -> get_where('code' . $ctype, array('uid' => $uid));
+        return $query -> result_array();
+    }
 }

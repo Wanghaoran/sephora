@@ -37,7 +37,7 @@
             </div>
             <a class="btn_s8_home btn_common" id="btn_s8_home" href="http://www.sephora.cn/">去官网使用</a>
             <!-- <div class="btn_s8_ques btn_common" id="btn_s8_ques">我也要出题</div> -->
-            <div class="btn_back btn_s8_ques btn_common" id="btn_s8_back">返回</div>
+            <div class="btn_back btn_s8_ques btn_common" id="btn_s8_back" onclick="history.go(-1);">返回</div>
         </section>
     </div>
 </div>

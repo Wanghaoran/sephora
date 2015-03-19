@@ -154,6 +154,18 @@ class User extends CI_Controller {
     }
 
     public function usercenter(){
+        $this -> load -> model('code_model');
+        $result_10 = $this -> code_model -> selectmycode(10, $this->session->userdata('sephora_wechat_id'));
+        $result_30 = $this -> code_model -> selectmycode(30, $this->session->userdata('sephora_wechat_id'));
+        $result_50 = $this -> code_model -> selectmycode(50, $this->session->userdata('sephora_wechat_id'));
+
+        echo '<pre>';
+        var_dump($result_10);
+        var_dump($result_30);
+        var_dump($result_50);
+        echo '</pre>';
+
+
         $data = array();
         $this->load->view('usercenter', $data);
 
