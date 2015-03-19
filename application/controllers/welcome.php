@@ -135,17 +135,32 @@ class Welcome extends CI_Controller {
 
         //查询当前登陆用户是否已经打开过礼包
 
-        $question = $this -> question_model -> getquestion($q);
 
+        //query question
+        $question = $this -> question_model -> getquestion($q);
         $data = array(
             'question' => $question,
         );
-        //打开问题
+
         $this->load->view('questions', $data);
+    }
+
+    public function trueanswer($q){
+        $this->load->helper('url');
+        if(!$this->session->userdata('sephora_wechat_id')){
+            redirect('welcome/oauth2_authorize2?q=' . $q);
+        }
+
+        //query question code
+        $this -> load -> model('question_model');
+        $code_info = $this -> question_model -> getquestioncode();
+
+        var_dump($code_info);
 
     }
 
     public function completequestion($q){
+        $this->load->helper('url');
         if(!$this->session->userdata('sephora_wechat_id')){
             redirect('welcome/oauth2_authorize2?q=' . $q);
         }

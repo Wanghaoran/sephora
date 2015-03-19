@@ -48,5 +48,16 @@ class question_model extends CI_Model {
         return $query -> result_array()[0];
     }
 
+    public function getquestioncode($qid){
+        $query = $this -> db -> get_where('question', array('id' => $qid), 1);
+        $result = array(
+            '10code' => $query -> result_array()[0]['10code'],
+            '30code' => $query -> result_array()[0]['30code'],
+            '50code' => $query -> result_array()[0]['50code'],
+        );
+        return $result;
+
+    }
+
 
 }
