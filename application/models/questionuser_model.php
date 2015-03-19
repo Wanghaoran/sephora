@@ -30,7 +30,7 @@ class Questionuser_model extends CI_Model {
         $this->db->select('sephora_wechatuser.headimgurl');
         $this->db->from('sephora_questionuser');
         $this->db->join('sephora_wechatuser', 'sephora_questionuser.uid = sephora_wechatuser.id');
-        $this->db->where('sephora_questionuser.qid=' . $qid);
+        $this->db->where('sephora_questionuser.qid', $qid);
         $query = $this->db->get();
         return $query -> result_array();
 
