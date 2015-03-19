@@ -129,12 +129,14 @@ class Welcome extends CI_Controller {
         $uid = $this -> question_model -> getuid($q);
 
         //myself
-        if($this->session->userdata('sephora_wechat_id') == $uid){
-            redirect('complete/' . $q);
+//        if($this->session->userdata('sephora_wechat_id') == $uid){
+//            redirect('complete/' . $q);
+//        }
 
-        }
-        var_dump($q);
-        var_dump($uid);
+        //查询当前登陆用户是否已经打开过礼包
+
+        //打开问题
+        $this->load->view('questions');
 
     }
 
