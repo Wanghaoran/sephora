@@ -33,7 +33,6 @@ class Questionuser_model extends CI_Model {
         $this->db->where('sephora_questionuser.qid', $qid);
         $query = $this->db->get();
         return $query -> result_array();
-
     }
 
 }

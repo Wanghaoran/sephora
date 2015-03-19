@@ -224,13 +224,17 @@ class Welcome extends CI_Controller {
         $this -> load -> model('questionuser_model');
 
         $icon_arr = $this -> questionuser_model -> selectusericon($q);
+        if(!empty($icon_arr)){
+            $icon = $icon_arr[array_rand($icon_arr)]['headimgurl'];
+        }else{
+            $icno = '';
+        }
 
-        var_dump($icon_arr);
-
-
+        var_dump($icon);
 
         $data = array(
             'code_arr' => array_merge($code10, $code30, $code50),
+            'icon' => $icon,
         );
 
         $this->load->view('completequestion', $data);
