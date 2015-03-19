@@ -75,7 +75,7 @@
                 link: '<?=$this->config->base_url()?>q/<?=$qid;?>', // 分享链接
                 imgUrl: '<?=$this->config->base_url()?>public/images/icon.jpg', // 分享图标
                 success: function () {
-                    location.href='<?=$this->config->base_url()?>endquestion/<?=$qid?>';
+                    location.href='<?=$this->config->base_url()?>startgift/<?=$qid?>';
                 },
                 cancel: function () {
                     $("#answer_error").removeClass("dn");
@@ -89,7 +89,7 @@
                 type: 'link', // 分享类型,music、video或link，不填默认为link
                 dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                 success: function () {
-                    location.href='<?=$this->config->base_url()?>endquestion/<?=$qid?>';
+                    location.href='<?=$this->config->base_url()?>startgift/<?=$qid?>';
                 },
                 cancel: function () {
                     $("#answer_error").removeClass("dn");

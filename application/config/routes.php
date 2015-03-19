@@ -45,6 +45,7 @@ $route['terms'] = 'welcome/terms';
 $route['question'] = 'user/question';
 $route['answer'] = 'user/answer';
 $route['creatquestion'] = 'user/creatquestion';
+$route['tartgift'] = 'user/tartgift';
 $route['customquestion'] = 'user/customquestion';
 $route['q/(:num)'] = 'welcome/question/$1';
 $route['endquestion/(:num)'] = 'user/endquestion/$1';

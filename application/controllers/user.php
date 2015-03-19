@@ -118,6 +118,14 @@ class User extends CI_Controller {
         $this->load->view('creatquestion', $data);
     }
 
+    public function startgift($qid){
+        $data = array(
+            'qid' => $qid,
+        );
+        $this->load->view('startgift', $data);
+
+    }
+
     public function endquestion($qid){
         $this->load->helper('url');
 
