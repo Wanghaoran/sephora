@@ -133,11 +133,11 @@ class User extends CI_Controller {
         $uid = $this->session->userdata('sephora_wechat_id');
         $ip = $this->input->ip_address();
         $ttype = 30;
-        $code = $this -> code_model -> getcode($ttype, 2, $uid, $ip);
+        $code = $this -> code_model -> getcode($ttype, 2, $uid, $qid, $ip);
 
         if(!$code){
             //again
-            $code = $this -> code_model -> getcode($ttype, 2, $uid, $ip);
+            $code = $this -> code_model -> getcode($ttype, 2, $uid, $qid, $ip);
         }
 
         if(!$code){

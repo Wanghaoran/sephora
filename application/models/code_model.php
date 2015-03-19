@@ -8,7 +8,7 @@ class Code_model extends CI_Model {
         $this -> load -> database();
     }
 
-    public function getcode($ctype, $ttype, $uid, $ip){
+    public function getcode($ctype, $ttype, $uid, $qid, $ip){
         $query = $this -> db -> get_where('code' . $ctype, array('type' => 1), 1);
         $a = $query -> result_array();
         if(!$a){
@@ -19,6 +19,7 @@ class Code_model extends CI_Model {
             'type' => $ttype,
             'time' => time(),
             'uid' => $uid,
+            'qid' => $qid,
             'ip' => $ip,
         );
         $this -> db -> where('id', $a[0]['id']);
