@@ -7,12 +7,16 @@ class User extends CI_Controller {
         //check authorization
         if(!$this->session->userdata('sephora_wechat_id')){
             $this->load->helper('url');
+            /*
             if($method == 'usercenter'){
                 redirect('welcome/oauth2_authorize?q=usercenter');
             }else{
                 redirect('welcome/oauth2_authorize?q=question');
 
             }
+            */
+            redirect('welcome/oauth2_authorize?q=question');
+
         }
 
         if (method_exists($this, $method))
@@ -150,22 +154,6 @@ class User extends CI_Controller {
 
         $this->load->view('endquestion', $data);
 
-
-    }
-
-    public function usercenter(){
-        $this -> load -> model('code_model');
-        $result_10 = $this -> code_model -> selectmycode(10, $this->session->userdata('sephora_wechat_id'));
-        $result_30 = $this -> code_model -> selectmycode(30, $this->session->userdata('sephora_wechat_id'));
-        $result_50 = $this -> code_model -> selectmycode(50, $this->session->userdata('sephora_wechat_id'));
-
-        $data = array(
-            'result' => array_merge($result_10, $result_30, $result_50),
-        );
-        echo '<pre>';
-        var_dump($data);
-        echo '</pre>';
-        $this->load->view('usercenter', $data);
 
     }
 

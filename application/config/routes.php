@@ -48,7 +48,6 @@ $route['creatquestion'] = 'user/creatquestion';
 $route['customquestion'] = 'user/customquestion';
 $route['q/(:num)'] = 'welcome/question/$1';
 $route['endquestion/(:num)'] = 'user/endquestion/$1';
-$route['usercenter'] = 'user/usercenter';
 
 
 /* End of file routes.php */
