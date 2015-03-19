@@ -50,6 +50,7 @@ $route['q/(:num)'] = 'welcome/question/$1';
 $route['endquestion/(:num)'] = 'user/endquestion/$1';
 $route['complete/(:num)'] = 'welcome/completequestion/$1';
 $route['trueanswer/(:num)'] = 'welcome/trueanswer/$1';
+$route['nocode'] = 'welcome/nocode';
 
 
 /* End of file routes.php */
