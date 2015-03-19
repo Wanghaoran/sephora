@@ -129,9 +129,9 @@ class Welcome extends CI_Controller {
         $uid = $this -> question_model -> getuid($q);
 
         //myself
-//        if($this->session->userdata('sephora_wechat_id') == $uid){
-//            redirect('complete/' . $q);
-//        }
+        if($this->session->userdata('sephora_wechat_id') == $uid){
+            redirect('complete/' . $q);
+        }
 
         //check user
         $this -> load -> model('questionuser_model');
@@ -211,7 +211,9 @@ class Welcome extends CI_Controller {
         if(!$this->session->userdata('sephora_wechat_id')){
             redirect('welcome/oauth2_authorize2?q=' . $q);
         }
-        var_dump($q);
+        $data = array();
+        $this->load->view('completequestion', $data);
+
     }
 
     public function nocode(){
