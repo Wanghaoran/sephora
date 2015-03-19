@@ -224,7 +224,7 @@ class Welcome extends CI_Controller {
         $this -> load -> model('questionuser_model');
 
         $icon_arr = $this -> questionuser_model -> selectusericon($q);
-        if(!empty($icon_arr)){
+        if(!$icon_arr){
             $icon = $icon_arr[array_rand($icon_arr)]['headimgurl'];
         }else{
             $icno = '';
