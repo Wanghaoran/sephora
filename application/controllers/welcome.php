@@ -300,7 +300,9 @@ class Welcome extends CI_Controller {
         if(!$this->session->userdata('sephora_wechat_id')){
             redirect('welcome/oauth2_authorize3?q=usercenter');
         }
+        echo 1;
 
+        /*
         $uid = $this->session->userdata('sephora_wechat_id');
 
         //read my code
@@ -318,6 +320,7 @@ class Welcome extends CI_Controller {
             'icon' => $user_info[0]['headimgurl']
         );
         $this->load->view('usercenter', $data);
+        */
     }
 }
 
