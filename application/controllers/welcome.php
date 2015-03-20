@@ -275,11 +275,13 @@ class Welcome extends CI_Controller {
 
         @$icon = $re_arr['headimgurl'];
         @$name = $re_arr['nickname'];
+        $num = $this -> questionuser_model -> selectusernum($q);
 
         $data = array(
             'code_arr' => array_merge($code10, $code30, $code50),
             'icon' => $icon,
             'name' => $name,
+            'num' => $num,
         );
 
         $this->load->view('completequestion', $data);

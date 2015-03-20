@@ -40,7 +40,7 @@
 
             <?php if($name): ?>
                 <div class="s8_friend_title">真命闺蜜</div>
-                <div class="s8_friend"><?=$name;?>凭实力在40名闺蜜中一题成名,<br>获封“真名闺蜜”！让我们一起美下去</div>
+                <div class="s8_friend"><?=$name;?>凭实力在<?=$num;?>名闺蜜中一题成名,<br>获封“真名闺蜜”！让我们一起美下去</div>
             <?php endif; ?>
 
 

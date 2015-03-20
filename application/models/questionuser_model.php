@@ -35,4 +35,10 @@ class Questionuser_model extends CI_Model {
         return $query -> result_array();
     }
 
+    public function selectusernum($qid){
+        $this -> db -> where('qid', $qid);
+        $now = $this->db->count_all_results('questionuser');
+        return $now;
+    }
+
 }
