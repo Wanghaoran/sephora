@@ -27,7 +27,7 @@ class Questionuser_model extends CI_Model {
     }
 
     public function selectusericon($qid){
-        $this->db->select('sephora_wechatuser.headimgurl');
+        $this->db->select('sephora_wechatuser.headimgurl,sephora_wechatuser.nickname');
         $this->db->from('sephora_questionuser');
         $this->db->join('sephora_wechatuser', 'sephora_questionuser.uid = sephora_wechatuser.id');
         $this->db->where('sephora_questionuser.qid', $qid);
