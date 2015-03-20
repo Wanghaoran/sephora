@@ -32,7 +32,7 @@ class Welcome extends CI_Controller {
 
         $this->load->helper('url');
         if(empty($_GET['code'])){
-            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' . $this -> config -> item('wechat_appid') . '&redirect_uri=' . urlencode('http://sephora.cnhtk.cn/index.php/welcome/oauth2_authorize') . '&response_type=code&scope=snsapi_userinfo&state=' . $q . '#wechat_redirect';
+            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' . $this -> config -> item('wechat_appid') . '&redirect_uri=' . urlencode($this->config->base_url() . 'index.php/welcome/oauth2_authorize') . '&response_type=code&scope=snsapi_userinfo&state=' . $q . '#wechat_redirect';
             redirect($token_url);
         }
 
@@ -77,7 +77,7 @@ class Welcome extends CI_Controller {
 
         $this->load->helper('url');
         if(empty($_GET['code'])){
-            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' . $this -> config -> item('wechat_appid') . '&redirect_uri=' . urlencode('http://sephora.cnhtk.cn/index.php/welcome/oauth2_authorize2') . '&response_type=code&scope=snsapi_userinfo&state=' . $q . '#wechat_redirect';
+            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' . $this -> config -> item('wechat_appid') . '&redirect_uri=' . urlencode($this->config->base_url() . 'index.php/welcome/oauth2_authorize2') . '&response_type=code&scope=snsapi_userinfo&state=' . $q . '#wechat_redirect';
             redirect($token_url);
         }
 
@@ -122,7 +122,7 @@ class Welcome extends CI_Controller {
 
         $this->load->helper('url');
         if(empty($_GET['code'])){
-            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' . $this -> config -> item('wechat_appid') . '&redirect_uri=' . urlencode('http://sephora.cnhtk.cn/index.php/welcome/oauth2_authorize2') . '&response_type=code&scope=snsapi_userinfo&state=' . $q . '#wechat_redirect';
+            $token_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' . $this -> config -> item('wechat_appid') . '&redirect_uri=' . urlencode($this->config->base_url() . 'index.php/welcome/oauth2_authorize2') . '&response_type=code&scope=snsapi_userinfo&state=' . $q . '#wechat_redirect';
             redirect($token_url);
         }
 
