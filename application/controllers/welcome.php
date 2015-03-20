@@ -276,6 +276,8 @@ class Welcome extends CI_Controller {
         @$icon = $re_arr['headimgurl'];
         @$name = $re_arr['nickname'];
 
+        var_dump($name);
+
         $data = array(
             'code_arr' => array_merge($code10, $code30, $code50),
             'icon' => $icon,
