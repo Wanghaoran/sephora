@@ -80,11 +80,12 @@
         Sephora.init();
         //var aaa = window.location.hash;
         //alert(aaa)
+        setTimeout(function(){
+            $("#loading_head").hide();
+            $("#c_header_img").show();
+        },1000)
     })
-    setTimeout(function(){
-        $("#loading_head").hide();
-        $("#c_header_img").show();
-    },1000)
+
 </script>
 </body>
 
