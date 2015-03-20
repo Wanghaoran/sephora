@@ -29,7 +29,7 @@
                 <div class="s5_gift_cost" id="s5_gift_cost"><span class="coupon_cost"><?=$ctype;?></span>元现金券</div>
                 <div class="s5_txt" id="s5_txt">答对了！算你懂我<br>送你丝芙兰<span class="coupon_cost"><?=$ctype;?></span>元现金券，<br>让我们一起美下去!<br>优惠券代码：<span class="coupon_code"><?=$code;?></span></div>
             </div>
-            <a class="btn_s5_home btn_common" id="btn_s5_home" href="http://www.sephora.cn/">去官网使用</a>
+            <a class="btn_s5_home btn_common" id="btn_s5_home" href="http://www.sephora.cn?rsour=wechat&rmeth=social&rcamp=Besties&rcont=answer">去官网使用</a>
             <div class="btn_s5_ques btn_common" id="btn_s5_ques" onclick="location.href='<?=$this->config->base_url()?>question';">我也要出题</div>
         </section>
     </div>
