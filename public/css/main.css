@@ -880,7 +880,7 @@ section#screen_11 {
 	color: #000;
     font-size: 1em;
     left: 13%;
-    line-height: 1.6;
+    line-height: 1.5;
     position: absolute;
     top: 58%;
 }
@@ -1046,6 +1046,10 @@ section#screen_11 {
 @media only screen and (min-width:361px) and (max-width:479px) {	
 	.s9_gift_desc {
 		font-size: 1.3em;
+		line-height: 1.6;
+	}
+	.s9_txt {
+		font-size: 2em;
 	}
 }
 @media only screen and (min-width: 480px) and (max-width: 639px) and (min-height: 600px){
