@@ -14,6 +14,7 @@ img {
 .s_link {
 	font-size: 1em;
 	text-decoration: underline;
+	color: #000;
 }
 
 
@@ -173,7 +174,7 @@ section#screen_4 {
 	z-index: 96;
 }
 section#screen_5 {
-	background: #e04038 url(../images/bg_s5.jpg) top center no-repeat;
+	background: #e04038 url(../images/bg_s5_2.jpg) top center no-repeat;
 	background-size: 100%;
 	z-index: 95;
 }
@@ -269,7 +270,13 @@ section#screen_11 {
 	left: 50%;
 	margin-left: 5%;
 }
-
+.lookup_p {
+	position: absolute;
+	z-index: 9;
+	bottom: 2%;
+	left: 50%;
+	margin-left: -5%;
+}
 
 /* screen_2 */
 .s2_slogan {
@@ -390,7 +397,7 @@ section#screen_11 {
 	font-size: 1.5em;
 	line-height: 1.3;
 	margin-top: .2em;
-	padding-left: 30%;
+	padding-left: 20%;
 }
 .s3_q_list li>span{
 	background: url(../images/bg_li_icon.png) 0 0 no-repeat;
@@ -424,6 +431,7 @@ section#screen_11 {
 	border: 1px #bc2d21 solid;
 	height: 1.5em;
 	padding:0 0.5em;
+	border-radius: none;
 }
 .s32_q_list li>span{
 	background: url(../images/bg_li_icon.png) 0 0 no-repeat;
@@ -577,7 +585,7 @@ section#screen_11 {
 .s5_txt {
 	width: 100%;
 	font-size: 1.7em;
-	line-height: 1.5;
+	line-height: 1.4;
 	top: 95%;
 	position: absolute;
 	left: 0;
@@ -707,7 +715,7 @@ section#screen_11 {
 	border-radius: 5px;
 	position: absolute;
 	width: 80%;
-	top: 50%;
+	top: 54%;
 	left: 10%;
 	max-height: 30%;
 	overflow-x: hidden;
@@ -725,17 +733,31 @@ section#screen_11 {
 }
 .s8_friend {
 	color: #000;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	text-align: center;
 	width: 100%;
 	position: absolute;
 	z-index: 99;
 	left: 0px;
-	bottom: 55%;
+	bottom: 46%;
+	line-height: 1.2;
+}
+.s8_friend_title {
+	color: #000;
+	font-size: 1.8em;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	z-index: 99;
+	left: 0px;
+	bottom: 52%;
+	line-height: 1.2;
+	font-weight: bold;
 }
 .s8_txt_li {
 	width: 90%;
 	margin: 0 auto;
+	border-bottom: 1px solid red;
 }
 .s8_txt_li>h4{
 	font-size: 1.5em;
@@ -815,7 +837,7 @@ section#screen_11 {
     position: absolute;
     z-index: 999;
     left: 37%;
-    top: 25%;
+    top: 22%;
 }
 .c_header_box .cover_img {
 	z-index: 99;
@@ -865,7 +887,7 @@ section#screen_11 {
 .s9_txt {
 	width: 100%;
 	font-size: 1.6em;
-	line-height: 1.5;
+	line-height: 1.4;
 	top: 95%;
 	position: absolute;
 	left: 0;
@@ -1008,8 +1030,8 @@ section#screen_11 {
 	.btn_s5_home,.btn_s5_ques {
 		bottom: 2%;
 	}
-	.s5_txt {
-		top: 85%;
+	.s5_txt,.s9_txt {
+		top: 87%;
 	}
 	.s1_libao {
 		top: 96%;
@@ -1017,11 +1039,13 @@ section#screen_11 {
 	.s2_sure {
 		margin-top: 2%;
 	}
-	.s8_friend {
-		bottom: 50%;
-	}
 	.btn_s9_home,.btn_s9_ques {
 		bottom: 2%;
+	}
+}
+@media only screen and (min-width:361px) and (max-width:479px) {	
+	.s9_gift_desc {
+		font-size: 1.3em;
 	}
 }
 @media only screen and (min-width: 480px) and (max-width: 639px) and (min-height: 600px){

@@ -26,9 +26,11 @@
                 <img src="<?=$this->config->base_url()?>public/images/head_cover.png" class="cover_img">
                 <div class="custom_header">
                     <?php if($icon): ?>
-                        <img src="<?=$icon;?>">
+                        <img id="loading_head" src="<?=$this->config->base_url()?>public/images/loading.gif">
+                        <img id="c_header_img" style="display:none;" src="<?=$icon;?>" >
                     <?php else: ?>
-                        <img src="<?=$this->config->base_url()?>public/images/wenhao.png">
+                        <img id="loading_head" src="<?=$this->config->base_url()?>public/images/loading.gif">
+                        <img id="c_header_img" style="display:none;" src="<?=$this->config->base_url()?>public/images/wenhao.png" >
                     <?php endif; ?>
                 </div>
                 <div class="c_header">
@@ -72,6 +74,12 @@
         //var aaa = window.location.hash;
         //alert(aaa)
     })
+
+    setTimeout(function(){
+        $("#loading_head").hide();
+        $("#c_header_img").show();
+    },1000)
+
 </script>
 </body>
 

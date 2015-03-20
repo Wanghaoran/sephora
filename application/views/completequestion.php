@@ -35,6 +35,13 @@
                     <img src="<?=$this->config->base_url()?>public/images/crown.png">
                 </div>
             </div>
+
+            <?php if($name): ?>
+                <div class="s8_friend_title">真命闺蜜</div>
+                <div class="s8_friend"><?=$name;?>凭实力在40名闺蜜中一题成名,<br>获封“真名闺蜜”！让我们一起美下去</div>
+            <?php endif; ?>
+
+
             <div class="s8_coupon_box" id="s8_coupon_box">
                 <h3>我的优惠券</h3>
                 <?php foreach($code_arr as $value): ?>

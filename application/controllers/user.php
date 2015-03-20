@@ -158,6 +158,7 @@ class User extends CI_Controller {
         $data = array(
             'ttype' => $ttype,
             'code' => $code,
+            'q' => $qid,
         );
 
         $this->load->view('endquestion', $data);

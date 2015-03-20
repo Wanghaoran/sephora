@@ -38,6 +38,7 @@
             </div>
             <a class="btn_s9_home btn_common" id="btn_s9_home" href="http://www.sephora.cn?rsour=wechat&rmeth=social&rcamp=Besties&rcont=luckydraw">去官网使用</a>
             <div class="btn_s9_ques btn_common" id="btn_s9_ques" onclick="location.href='<?=$this->config->base_url()?>question';">出题再抽</div>
+            <a class="lookup_p s_link" href="<?=$this->config->base_url()?>complete/<?=$q?>">查看结果</a>
         </section>
     </div>
 </div>

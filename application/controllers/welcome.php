@@ -245,6 +245,7 @@ class Welcome extends CI_Controller {
         $data = array(
             'code' => $code,
             'ctype' => $ctype,
+            'q' => $q,
         );
         $this->load->view('trueanswer', $data);
 
@@ -270,11 +271,15 @@ class Welcome extends CI_Controller {
 
         $icon_arr = $this -> questionuser_model -> selectusericon($q);
 
-        @$icon = $icon_arr[array_rand($icon_arr)]['headimgurl'];
+        @$re_arr = $icon_arr[array_rand($icon_arr)];
+
+        @$icon = $re_arr['headimgurl'];
+        @$name = $re_arr['nickname'];
 
         $data = array(
             'code_arr' => array_merge($code10, $code30, $code50),
             'icon' => $icon,
+            'name' => $name,
         );
 
         $this->load->view('completequestion', $data);
