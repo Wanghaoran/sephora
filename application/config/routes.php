@@ -56,5 +56,6 @@ $route['usercenter'] = 'welcome/usercenter';
 $route['errorpage'] = 'welcome/errorpage';
 
 
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

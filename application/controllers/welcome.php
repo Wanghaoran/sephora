@@ -17,7 +17,6 @@ class Welcome extends CI_Controller {
 
     */
 
-
     public function wechat_index(){
         $this->load->view('wechat_index');
     }
@@ -299,6 +298,7 @@ class Welcome extends CI_Controller {
 
     public function usercenter(){
 
+        $this->load->helper('url');
         if(!$this->session->userdata('sephora_wechat_id')){
             redirect('welcome/oauth2_authorize3?q=usercenter');
         }
