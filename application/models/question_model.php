@@ -26,7 +26,8 @@ class question_model extends CI_Model {
 
     public function gettype($qid){
         $query = $this -> db -> get_where('question', array('id' => $qid), 1);
-        return $query -> result_array()[0]['type'];
+        $result = $query -> result_array();
+        return $result[0]['type'];
     }
 
     public function updatetype($qid){
@@ -40,20 +41,23 @@ class question_model extends CI_Model {
 
     public function getuid($qid){
         $query = $this -> db -> get_where('question', array('id' => $qid), 1);
-        return $query -> result_array()[0]['uid'];
+        $result = $query -> result_array();
+        return $result[0]['uid'];
     }
 
     public function getquestion($qid){
         $query = $this -> db -> get_where('question', array('id' => $qid), 1);
-        return $query -> result_array()[0];
+        $result = $query -> result_array();
+        return $result[0];
     }
 
     public function getquestioncode($qid){
         $query = $this -> db -> get_where('question', array('id' => $qid), 1);
+        $result = $query -> result_array();
         $result = array(
-            '10code' => $query -> result_array()[0]['10code'],
-            '30code' => $query -> result_array()[0]['30code'],
-            '50code' => $query -> result_array()[0]['50code'],
+            '10code' => $result[0]['10code'],
+            '30code' => $result[0]['30code'],
+            '50code' => $result[0]['50code'],
         );
         return $result;
     }

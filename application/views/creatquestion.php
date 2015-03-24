@@ -62,7 +62,7 @@
         // 微信配置
         wx.config({
             debug: false,
-            appId: "wx949efd128cd9bf73",
+            appId: "wx5a2dbcd561853a2f",
             timestamp: '<?php echo $timestamp;?>',
             nonceStr: '<?php echo $nonceStr;?>',
             signature: '<?php echo $signature;?>',
